@@ -1,0 +1,14 @@
+INPUTS JSON 
+=================== 
+[
+    {
+        "advanced": true, 
+        "category_name": "RightScale", 
+        "default_value": "blank", 
+        "description": "Check whether a RightLink upgrade is available and perform the upgrade.", 
+        "kind": "string", 
+        "name": "UPGRADE_VERSION", 
+        "possible_values": [], 
+        "required": true
+    }
+]
