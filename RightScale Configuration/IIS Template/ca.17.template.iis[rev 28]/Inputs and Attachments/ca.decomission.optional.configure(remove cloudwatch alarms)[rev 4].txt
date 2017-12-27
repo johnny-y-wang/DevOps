@@ -1,0 +1,47 @@
+INPUTS JSON 
+=================== 
+[
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_DPL_REGION", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_SA_TIER_NAME", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_DPL_DEPLOYMENT_NAME", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_GBL_INSTANCE_NAME", 
+        "possible_values": [], 
+        "required": true
+    }
+]
+INPUTS ATTACHMENTS 
+=================== 
+[]

@@ -1,0 +1,30 @@
+INPUTS JSON 
+=================== 
+[
+    {
+        "advanced": true, 
+        "category_name": "RightScale", 
+        "default_value": "text:true", 
+        "description": "Enables or disables automatic upgrade of RightLink10.", 
+        "kind": "string", 
+        "name": "ENABLE_AUTO_UPGRADE", 
+        "possible_values": [
+            "text:true", 
+            "text:false"
+        ], 
+        "required": false
+    }, 
+    {
+        "advanced": true, 
+        "category_name": "RightScale", 
+        "default_value": "text:https://rightlink.rightscale.com/rightlink/upgrades", 
+        "description": "External location of 'upgrades' file", 
+        "kind": "string", 
+        "name": "UPGRADES_FILE_LOCATION", 
+        "possible_values": [], 
+        "required": false
+    }
+]
+INPUTS ATTACHMENTS 
+=================== 
+[]

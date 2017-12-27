@@ -1,0 +1,40 @@
+INPUTS JSON 
+=================== 
+[
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_OP_APP_POOL_OPERATION", 
+        "possible_values": [
+            "text:Start", 
+            "text:Stop", 
+            "text:Recycle"
+        ], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_SA_APP_POOL_NAME", 
+        "possible_values": [
+            "text:App", 
+            "text:Rec", 
+            "text:Member", 
+            "text:Logic", 
+            "text:Partner", 
+            "text:TCC", 
+            "text:Mobile-Auth", 
+            "text:Mobile-Data"
+        ], 
+        "required": true
+    }
+]
+INPUTS ATTACHMENTS 
+=================== 
+[]
