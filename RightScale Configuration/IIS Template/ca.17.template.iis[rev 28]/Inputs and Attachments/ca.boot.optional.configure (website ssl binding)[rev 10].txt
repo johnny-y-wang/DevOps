@@ -1,0 +1,289 @@
+INPUTS JSON 
+=================== 
+[
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_SA_BOOL_INSTALL_SSL", 
+        "possible_values": [
+            "text:true", 
+            "text:false"
+        ], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_SA_WEB_SITE_NAME", 
+        "possible_values": [
+            "text:App", 
+            "text:Rec", 
+            "text:Member", 
+            "text:Logic", 
+            "text:PDF", 
+            "text:Partner"
+        ], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_DPL_REGION", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_GBL_DOWNLOAD_FOLDER_PATH", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_GBL_OPS_BUCKET_NAME", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_GBL_RS_LIB_FILE_PATH", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_SA_CERT_FILE_S3_KEY", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_SA_CRED_PFX_PASSWORD", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "*", 
+        "kind": "string", 
+        "name": "CA_GBL_HOST_HEADER", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_GLB_FORCE_EXECUTE", 
+        "possible_values": [], 
+        "required": true
+    }
+]
+INPUTS ATTACHMENTS 
+=================== 
+[
+    {
+        "created_at": "2017/07/14 17:39:28 +0000", 
+        "digest": "e6b96acd5810b784881f4d0d91b45de4", 
+        "download_url": "https://island1.rightscale.com/attachments/1/e6b96acd5810b784881f4d0d91b45de4?md5=e6b96acd5810b784881f4d0d91b45de4&expiration=1514356692&signature=LIYwpILemiebKE%2F0JmYpUzqfDqoPv8MMDzKb9JsjB01Fe1rPkYfleBJ%2F6QbV%0AlT22Tu3W3F8GSntLZhvAwv9KS3lICvmDEbwz6SyZ%2B0ufkBgy%2F3xiwuz3%2BaNs%0A%2FVnY1WmRqwMi0R%2Fvs1tMvytqVstcQcoKCq8R%2BhKqY%2BH25u6IitE%3D%0A&signer=us-3&filename=ca_org_wild.pfx", 
+        "filename": "ca_org_wild.pfx", 
+        "id": "641088003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/600291003/attachments/641088003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/600291003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "4261", 
+        "updated_at": "2017/07/14 17:39:28 +0000"
+    }, 
+    {
+        "created_at": "2017/07/14 17:39:28 +0000", 
+        "digest": "b17d8aaa7b5286ab9b774c824eb38d7e", 
+        "download_url": "https://island1.rightscale.com/attachments/1/b17d8aaa7b5286ab9b774c824eb38d7e?md5=b17d8aaa7b5286ab9b774c824eb38d7e&expiration=1514356692&signature=dm8U3ss5TWbk%2FvDhg9BGwaFcx1zOPJpPo8wK%2BqOkxFvtnnK64y4geWhm0xIw%0A%2BsP2xlnXl8stqzNtAlyrFwVDX5apPpCJqXwl5MTQVAYsbEI%2FZ3wgbmJylRSE%0AJ6nbNUHC67zK8Zi169qdbb4tsl9ZQWCwyvBKeUXO%2FDckLcaskek%3D%0A&signer=us-3&filename=ca_org_wild_2015.pfx", 
+        "filename": "ca_org_wild_2015.pfx", 
+        "id": "641089003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/600291003/attachments/641089003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/600291003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "3149", 
+        "updated_at": "2017/07/14 17:39:28 +0000"
+    }, 
+    {
+        "created_at": "2017/07/14 17:39:28 +0000", 
+        "digest": "3c6ca6ec1547a2ff61bb34bff22ffca4", 
+        "download_url": "https://island1.rightscale.com/attachments/1/3c6ca6ec1547a2ff61bb34bff22ffca4?md5=3c6ca6ec1547a2ff61bb34bff22ffca4&expiration=1514356692&signature=PjfWIrn%2FmV602h2FOo2OGBHKv4RrehQZn%2BJxw%2BB3yccm4y1YOqU1JLdL8Ual%0AZHQgEdrz9vaUVmvLPhJPiG5HCM%2FmllGsnTShVyy9j%2FLXDGmHDpS7JEiV5w0v%0AISWAfV6HrSYJYpteJO1NhzjYxzK9C0txUBII10WRRljsHVotPls%3D%0A&signer=us-3&filename=ca_org_wild_01_26_2016.pfx", 
+        "filename": "ca_org_wild_01_26_2016.pfx", 
+        "id": "641090003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/600291003/attachments/641090003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/600291003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "6845", 
+        "updated_at": "2017/07/14 17:39:28 +0000"
+    }, 
+    {
+        "created_at": "2017/07/14 17:39:28 +0000", 
+        "digest": "10a9321385cf44ab64e99e74deb5b8d2", 
+        "download_url": "https://island1.rightscale.com/attachments/1/10a9321385cf44ab64e99e74deb5b8d2?md5=10a9321385cf44ab64e99e74deb5b8d2&expiration=1514356692&signature=CFjJqqdC669iYEDSNv3eyCaDf8onI0qlclLI0wZSjjK6o1olz5GKVarziv0N%0AaY6AKsu2ZcEfpAI5ZRqROoYHecpm4J5LDhpCrET33rk67niYdhMN7Dkyf94c%0Aw86nQy6uaYjqOz6MK9o4Z3tF5CnRImXxj4dw7Y5ZWgk8EK29YQM%3D%0A&signer=us-3&filename=[2016-17]ca_org_wild_02_18_2016.pfx", 
+        "filename": "[2016-17]ca_org_wild_02_18_2016.pfx", 
+        "id": "641091003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/600291003/attachments/641091003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/600291003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "6845", 
+        "updated_at": "2017/07/14 17:39:28 +0000"
+    }, 
+    {
+        "created_at": "2017/07/14 17:39:28 +0000", 
+        "digest": "d8e0685852ca8a0f69e73f706c66d6e4", 
+        "download_url": "https://island1.rightscale.com/attachments/1/d8e0685852ca8a0f69e73f706c66d6e4?md5=d8e0685852ca8a0f69e73f706c66d6e4&expiration=1514356692&signature=NC%2FqwFC3N%2FKKdkY61RDijdmi7q5%2B46AKxny0yD3AngMz0VzT3hIjMPfrgy4m%0AFglt1hvScGWaRVctciApXcpp4xMWT6PZqfa%2Fq2Ui9mFLVKdjIAk%2BaYHlS9aD%0Av21szNbtBaRmHjisO9HHus3NnDEiaZ3lEKEKIT2SUUb%2BxGPz5VY%3D%0A&signer=us-3&filename=star_commonapp_net.pfx", 
+        "filename": "star_commonapp_net.pfx", 
+        "id": "641092003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/600291003/attachments/641092003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/600291003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "4829", 
+        "updated_at": "2017/07/14 17:39:28 +0000"
+    }, 
+    {
+        "created_at": "2017/07/14 17:39:28 +0000", 
+        "digest": "21e34fed558db87c7847e52cf2edff75", 
+        "download_url": "https://island1.rightscale.com/attachments/1/21e34fed558db87c7847e52cf2edff75?md5=21e34fed558db87c7847e52cf2edff75&expiration=1514356692&signature=mAWtcx%2BeVlGfce40ni%2FH2kjHPKk1Qr3vPRi3dfgfjEudYEfq7RRVFOP13JIo%0AUKcCRv3uhDT0ULCfLHXli%2FIo1AbMO5bOncwMR89YEfg050iLBQR6K2lDxr5e%0AWVNwEzXD%2F2dypre5CZExTKEICeJsFnYqzkLPpI7erRqiKCM%2BXM0%3D%0A&signer=us-3&filename=star_private_prod16_commonapp_net.pfx", 
+        "filename": "star_private_prod16_commonapp_net.pfx", 
+        "id": "641093003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/600291003/attachments/641093003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/600291003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "2509", 
+        "updated_at": "2017/07/14 17:39:28 +0000"
+    }, 
+    {
+        "created_at": "2017/07/14 17:39:28 +0000", 
+        "digest": "34687426198518ff24cdfdf11d40b6f3", 
+        "download_url": "https://island1.rightscale.com/attachments/1/34687426198518ff24cdfdf11d40b6f3?md5=34687426198518ff24cdfdf11d40b6f3&expiration=1514356692&signature=FDiIfSqCxi8aV0mFZciXFf00dMfCaeGvgTVwiiZdiTrMlexsahhJpKUvLWu6%0A2Kk5NPCnJrD41MET0D%2BmtLQhjiDlzi4mWCKK8vgYPabtG7hPfXAg9wyPLe%2Fu%0AAFiREs63JAH35MP7dEFzqVhpfUYwsrXeLgmkM%2BaXXF5XfbQnhZY%3D%0A&signer=us-3&filename=[2017-18]pmtconf17_02_24_2017.pfx", 
+        "filename": "[2017-18]pmtconf17_02_24_2017.pfx", 
+        "id": "641094003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/600291003/attachments/641094003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/600291003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "2925", 
+        "updated_at": "2017/07/14 17:39:28 +0000"
+    }, 
+    {
+        "created_at": "2017/07/14 17:39:28 +0000", 
+        "digest": "2cde6d2a19e0221876d5750f3ca280d0", 
+        "download_url": "https://island1.rightscale.com/attachments/1/2cde6d2a19e0221876d5750f3ca280d0?md5=2cde6d2a19e0221876d5750f3ca280d0&expiration=1514356692&signature=TFGS26IYyMp8gtyRwM1yblvSPWAYVbMdyqpaD8hM1UwEIQjbUHR4GO5gycDc%0A%2FwwjAiGsohEBUCMp0nba6Wxj4WXEb%2FrNFbepayfdy1Zl88omftK%2FuXc49nvD%0AJEsDdq8RQfmwlPLjEm2Feqrhv7iAtSnpdkvrse0DMB33HL68zZo%3D%0A&signer=us-3&filename=star_commonapp_org.pfx", 
+        "filename": "star_commonapp_org.pfx", 
+        "id": "641095003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/600291003/attachments/641095003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/600291003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "4829", 
+        "updated_at": "2017/07/14 17:39:28 +0000"
+    }, 
+    {
+        "created_at": "2017/07/14 17:39:28 +0000", 
+        "digest": "84b7bbbfa4339fab3d40f972f4f0293e", 
+        "download_url": "https://island1.rightscale.com/attachments/1/84b7bbbfa4339fab3d40f972f4f0293e?md5=84b7bbbfa4339fab3d40f972f4f0293e&expiration=1514356692&signature=DfMcFDH18ykYYIdW2%2FqoqSJijZdnkpsbKrBYjlggfDFK49g6ez%2FLWFMXH6fE%0AQPtxTgNHjovkYaFNs8BaPLEFuptIq%2Fvx6P%2BKvc0R%2B8GgOCKQEyd%2BwFn2gPxj%0AlBwaFUhNxptEzp74uxzPz%2BwMRzmjRT7Nkb9itrAEcT8KbIsQubQ%3D%0A&signer=us-3&filename=[2017-18]pmtconf17_04_03_2017.pfx", 
+        "filename": "[2017-18]pmtconf17_04_03_2017.pfx", 
+        "id": "641096003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/600291003/attachments/641096003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/600291003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "2557", 
+        "updated_at": "2017/07/14 17:39:28 +0000"
+    }
+]

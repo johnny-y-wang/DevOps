@@ -1,0 +1,43 @@
+
+INPUTS ATTACHMENTS 
+=================== 
+[
+    {
+        "created_at": "2016/03/10 17:55:23 +0000", 
+        "digest": "6025d4ece73e1d7a3de5654f123d49ee", 
+        "download_url": "https://island1.rightscale.com/attachments/1/6025d4ece73e1d7a3de5654f123d49ee?md5=6025d4ece73e1d7a3de5654f123d49ee&expiration=1514356646&signature=dhyQOlxiEg2rjh2sRpNNuAFaAT%2FKmq5PKZQKSCp%2BW5Gmm8sg6U5Wfet%2FNRa5%0A6notTL%2FPfmOQehX6cXS9bn5%2BwTklxFTHlS80sZV5RiSjJt9W2GNALVN7bN9K%0AKMCohc8nFDWtVmF5Gbt%2FjiW8BTvdoighR%2BatK2iWIrgF2ZK4wI4%3D%0A&signer=us-3&filename=IisMonitors.zip", 
+        "filename": "IisMonitors.zip", 
+        "id": "598187003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/559491003/attachments/598187003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/559491003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "1377", 
+        "updated_at": "2016/03/10 17:55:23 +0000"
+    }, 
+    {
+        "created_at": "2016/03/10 17:55:23 +0000", 
+        "digest": "15f7debf763635005a4d0b7dbc6995cb", 
+        "download_url": "https://island1.rightscale.com/attachments/1/15f7debf763635005a4d0b7dbc6995cb?md5=15f7debf763635005a4d0b7dbc6995cb&expiration=1514356646&signature=s%2BA2uHDEiaFnJkhEFgprDaLZOTZNiL9xl3s5bPoV%2Bb%2FNZtFk3%2FUuiWlKxaGX%0AhROSephgWSEwC7gPGh2GMbM8DrZq7wuStdR48v2Py1VppsPTk78Z4zpCnCSA%0AytDlEeKweHV0V21qeEnYbyNC3rvnPyral5UvpZvQgeyZgMMun2k%3D%0A&signer=us-3&filename=iis-monitoring.ps1", 
+        "filename": "iis-monitoring.ps1", 
+        "id": "598188003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/559491003/attachments/598188003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/559491003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "3761", 
+        "updated_at": "2016/03/10 17:55:23 +0000"
+    }
+]

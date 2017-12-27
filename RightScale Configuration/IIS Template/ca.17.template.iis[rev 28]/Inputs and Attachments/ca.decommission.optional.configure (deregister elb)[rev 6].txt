@@ -1,0 +1,70 @@
+INPUTS JSON 
+=================== 
+[
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "AWS region name", 
+        "kind": "string", 
+        "name": "CA_DPL_REGION", 
+        "possible_values": [
+            "text:us-east-1", 
+            "text:us-west-2"
+        ], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_GBL_RS_LIB_FILE_PATH", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_SA_BOOL_CLASSIC_ELB", 
+        "possible_values": [
+            "text:true", 
+            "text:false"
+        ], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_SA_ELB_OR_TARGET_GROUP_NAME", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "ELB connection drain out time", 
+        "kind": "string", 
+        "name": "CA_GBL_ELB_CONN_DRAIN_TIMEOUT", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_GBL_INSTANCE_ID", 
+        "possible_values": [], 
+        "required": true
+    }
+]
