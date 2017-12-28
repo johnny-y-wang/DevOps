@@ -1,0 +1,162 @@
+# Powershell 2.0
+# Copyright (c) 2008-2013 RightScale, Inc, All Rights Reserved Worldwide.
+
+$errorActionPreference = "Stop"
+ 
+$CA_REBOOT = [environment]::GetEnvironmentVariable("CA_REBOOT","Machine")
+
+# Add $env: to force execute input if this code is ever uncommented
+if ([System.Convert]::ToBoolean($CA_REBOOT) -and !([System.Convert]::ToBoolean($env:CA_GLB_FORCE_EXECUTE))){
+          
+  write-host "Skipping after reboot."
+  exit 0
+}
+
+$caPSLibPath = $env:CA_GBL_RS_LIB_FILE_PATH
+$downloadPath = $env:CA_GBL_DOWNLOAD_FOLDER_PATH
+$installFolder = "CADeploymentVerificationHostService"
+$installFolderPath = "C:\OpsAdminTools"
+$installFileS3Key = "2017/apps/CADeploymentVerificationHostService.zip"
+$bucketName = $env:CA_GBL_OPS_BUCKET_NAME
+$region = $env:CA_DPL_REGION
+$winServiceName = "CADeploymentVerificationHostService"
+$installSrcFolderPath = Join-Path (Join-Path $downloadPath $installFolder) "*"
+$arrServiceExeFiles = $env:CA_SA_ARR_EXE_FILE_NAME.split(",")
+$arrServiceFilePath = $env:CA_SA_ARR_INSTALL_FOLDER_PATH.split(",")
+$serviceNames = $env:CA_SA_ARR_WIN_SERVICE_NAME
+
+# include the CA powershell library
+. $caPSLibPath
+
+try{
+
+  # Create download folder if it doesn't exist
+  if ( -not (Test-Path $downloadPath)) {
+    mkdir $downloadPath
+  }
+
+  #Remove-Item (Join-Path $downloadPath "*") -recurse -force
+
+  #Download the release package from S3
+  $installFileName = GetS3File $region $bucketName $installFileS3Key $downloadPath
+
+  #Unzip the file in the downloaded folder
+  UnzipFile $downloadPath $installFileName
+
+  #Stop the services if already exists
+  
+  "Starting installation of service $winServiceName."
+        
+  #Stop the service before updating the code
+  if (Get-Service $winServiceName -ErrorAction SilentlyContinue){
+    
+    Stop-Service $winServiceName
+            
+    "Service status of $winServiceName is $(Get-Service $winServiceName | % {$_.status})." 
+  }else {
+    Write-Host "Service $winServiceName does not exits"
+    $Error.Clear()
+  }
+        
+  $installFolderPath = Join-Path $installFolderPath $installFolder
+  $exeFileName = "$winServiceName.exe"
+        
+  if ( -not (Test-Path $installFolderPath)) {
+    mkdir $installFolderPath
+  }
+
+  CleanupFolder (Join-Path $installFolderPath "*") 60
+        
+  Copy-Item $installSrcFolderPath -Destination $installFolderPath -recurse
+  
+  #Create an array of service exe file path 
+  $i = 0
+  foreach ($serviceExeFile in $arrServiceExeFiles){
+    $arrServiceFilePath[$i] = Join-Path $arrServiceFilePath[$i] "$serviceExeFile.exe"
+    $i++
+  }
+
+    
+  #get config file content
+  $appConfig = Join-Path $installFolderPath "$exeFileName.config"
+  $contents = (Get-Content $appConfig) -as [Xml]
+
+  
+  # Update ExeFilePath key in appsettings or add the key if it does not exist
+  $exeFilePath = $contents.configuration.appSettings.add | where {$_.Key -eq 'ExeFilePath'}
+  if($exeFilePath) 
+  {            
+    $exeFilePath.value = $arrServiceFilePath -join ","
+  } 
+  else 
+  {            
+    $exeFilePathEement=$contents.CreateElement("add")
+    
+    $exeFilePathKeyAtt=$contents.CreateAttribute("key")
+    $exeFilePathKeyAtt.psbase.value="ExeFilePath"
+    
+    $exeFilePathEement.SetAttributeNode($exeFilePathKeyAtt)
+    
+    $exeFilePathValueAtt=$contents.CreateAttribute("value")
+    $exeFilePathValueAtt.psbase.value=$arrServiceFilePath -join ","
+    
+    $exeFilePathEement.SetAttributeNode($exeFilePathValueAtt)
+    
+    $contents.configuration["appSettings"].AppendChild($exeFilePathEement)
+  }
+  
+  # Update CAServiceName key in appsettings or add the key if it does not exist
+  $CAServiceName = $contents.configuration.appSettings.add | where {$_.Key -eq 'CAServiceName'}
+  
+  if($CAServiceName) 
+  {            
+    $CAServiceName.value = $serviceNames
+  } 
+  else 
+  {            
+    $CAServiceNameEement=$contents.CreateElement("add")
+    
+    $CAServiceNameKeyAtt=$contents.CreateAttribute("key")
+    $CAServiceNameKeyAtt.psbase.value="CAServiceName"
+    
+    $CAServiceNameEement.SetAttributeNode($CAServiceNameKeyAtt)
+    
+    $CAServiceNameValueAtt=$contents.CreateAttribute("value")
+    $CAServiceNameValueAtt.psbase.value = $serviceNames
+    
+    $CAServiceNameEement.SetAttributeNode($CAServiceNameValueAtt)
+    
+    $contents.configuration["appSettings"].AppendChild($CAServiceNameEement)
+  }
+
+  #Save the configuration file
+  $contents.Save($appConfig)
+
+       
+  #Install the service and set the recovery options if service doesn't already exits
+  if (-not (Get-Service $winServiceName -ErrorAction SilentlyContinue)){
+            
+    "Installing service $winServiceName."
+     
+    ExecuteCommand "C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe $(Join-Path $installFolderPath $exeFileName)" "Unable to install the windows service $winServiceName."
+      
+    #set starttype to "Automaic"
+    set-service -name $winServiceName -startuptype automatic;
+            
+    #set recovery to 1 minute and reset count after 0 day
+    sc.exe failure $winServiceName reset= 0 actions= restart/60000;
+  }
+    
+
+  StartService $winServiceName 120
+      
+  "Installation of service $winServiceName completed successfully."
+  
+    
+  "Windows services code deployment completed successfully."
+}
+catch{
+  "There is an error: $_"
+  "Windows services code deployment failed."
+  exit 1
+}

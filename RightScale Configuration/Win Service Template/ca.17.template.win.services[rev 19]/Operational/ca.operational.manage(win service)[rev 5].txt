@@ -1,0 +1,46 @@
+$errorActionPreference = "Stop"
+
+
+$serviceName = $env:CA_OP_SERVICE_NAME
+$operation = $env:CA_OP_SERVICE_OPERATION
+
+
+switch ($operation) {
+
+  Start {
+    "Starting service $serviceName"
+    start-service $serviceName
+    $waitStatus = "Running"
+    
+    $service = get-service $serviceName
+    $service.WaitForStatus($waitStatus, "00:02:00")
+  }
+  
+  Stop {
+  
+    "Stopping service $serviceName"
+    stop-service $serviceName
+    $waitStatus = "Stopped"
+    
+    $service = get-service $serviceName
+    $service.WaitForStatus($waitStatus, "00:02:00")
+  }
+  
+  Restart {
+  
+    "Restarting service $serviceName"
+    Restart-service $serviceName
+    $waitStatus = "Running"
+    
+    $service = get-service $serviceName
+    $service.WaitForStatus($waitStatus, "00:02:00")
+  }
+  
+  Status {
+    
+  }
+}                
+
+
+$service = get-service $serviceName
+"Service $($service.Name) status is $($service.Status)"

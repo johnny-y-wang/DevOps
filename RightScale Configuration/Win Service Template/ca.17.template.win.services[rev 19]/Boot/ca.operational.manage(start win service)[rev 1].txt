@@ -1,0 +1,49 @@
+# Powershell 2.0
+# Copyright (c) 2008-2013 RightScale, Inc, All Rights Reserved Worldwide.
+
+$errorActionPreference = "Stop"
+ 
+$CA_REBOOT = [environment]::GetEnvironmentVariable("CA_REBOOT","Machine")
+
+# Add $env: to force execute input if this code is ever uncommented
+if ([System.Convert]::ToBoolean($CA_REBOOT) -and !([System.Convert]::ToBoolean($env:CA_GLB_FORCE_EXECUTE))){
+          
+  write-host "Skipping after reboot."
+  exit 0
+}
+
+$blnStartService = $env:CA_SA_BOOL_START_SERVICE
+$caPSLibPath = $env:CA_GBL_RS_LIB_FILE_PATH
+
+#Following variables can contain one more values separated by coma
+$arrWinServiceName = $env:CA_SA_ARR_WIN_SERVICE_NAME.split(",")
+
+# include the CA powershell library
+. $caPSLibPath
+
+#Import-Module -Name "C:\Program Files (x86)\AWS Tools\PowerShell\AWSPowerShell\AWSPowerShell.psd1"
+
+
+try{
+
+  #If start service flag is true then start the service after installation or code update
+  if ($blnStartService.ToLower() -eq "true"){
+
+    #Stop the services if already exists
+    foreach ($winServiceName in $arrWinServiceName) {
+    
+      "Starting the service $winServiceName"
+      
+      StartService $winServiceName 120
+      
+    }
+  }else {
+    "Service not started as Start Service flag is false"
+  }
+}
+catch{
+    "There is an error: $_"
+    "Windows services code deployment failed."
+    
+    exit 1
+}

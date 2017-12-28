@@ -1,0 +1,94 @@
+# Powershell 2.0
+# Copyright (c) 2008-2013 RightScale, Inc, All Rights Reserved Worldwide.
+
+$errorActionPreference = "Stop"
+ 
+$CA_REBOOT = [environment]::GetEnvironmentVariable("CA_REBOOT","Machine")
+
+# Add $env: to force execute input if this code is ever uncommented
+if ([System.Convert]::ToBoolean($CA_REBOOT) -and !([System.Convert]::ToBoolean($env:CA_GLB_FORCE_EXECUTE))){
+          
+  write-host "Skipping after reboot."
+  exit 0
+}
+
+$blnInstallAppDyn = $env:CA_SA_BOOL_APPDYNAMICS_INSTALL
+$blnStartService = $env:CA_SA_BOOL_START_SERVICE
+$sysName = $env:CA_DPL_APPDYNAMICS_SYSTEM_NAME
+$tierName = $env:CA_SA_TIER_NAME
+$instanceName = $env:CA_GBL_INSTANCE_NAME
+
+#skip installation if flag is not true
+If ($blnInstallAppDyn.ToLower() -ne "true"){
+  write-host "Skipping the APM install as flag is set to false..."
+  exit 0
+}
+
+#get the array of the service names
+$arrWinServiceName = $env:CA_SA_ARR_WIN_SERVICE_NAME.split(",")
+$arrServiceExeName = $env:CA_SA_ARR_EXE_FILE_NAME.split(",")
+$arrServiceFolderPath = $env:CA_SA_ARR_INSTALL_FOLDER_PATH.split(",")
+
+#Stopping winodows services"
+foreach ($winServiceName in $arrWinServiceName) {
+    
+    Stop-Service $winServiceName
+  
+}
+
+#replace values in the config file
+[xml] $xmlDoc = Get-Content("$env:RS_ATTACH_DIR\winservice-config.xml")
+
+# Write the application name in the agent config file
+$appElement = $xmlDoc.'appdynamics-agent'.controller.application
+$appElement.SetAttribute("name", $sysName)
+
+$parentElement = $xmlDoc.SelectSingleNode("appdynamics-agent/app-agents/standalone-applications")
+
+$i = 0
+# Add one or more service to the agent config
+foreach ($serviceFolderPath in $arrServiceFolderPath) {
+
+    $winserviceExePath = Join-Path "$serviceFolderPath" "$($arrServiceExeName[$i]).exe"
+    
+    $serviceElement = $xmlDoc.CreateElement("standalone-application")
+    $serviceElement.SetAttribute("executable", $winserviceExePath)
+
+    $tierElement = $xmlDoc.CreateElement("tier")
+    $tierElement.SetAttribute("name", $tierName)
+
+    $nodeElement = $xmlDoc.CreateElement("node")
+    $nodeElement.SetAttribute("name", $instanceName + "-" + $i)
+
+    $serviceElement.AppendChild($tierElement)
+    $serviceElement.AppendChild($nodeElement)
+    
+    $parentElement.AppendChild($serviceElement)
+    "Added service $winserviceExePath"
+    
+    $i++
+}
+
+
+#Save the config file to the AppDynamics installation folder
+$xmlDoc.save("C:\ProgramData\AppDynamics\DotNetAgent\Config\config.xml")
+
+#"Starting AppDynamics agent coordinator service"
+Start-Service AppDynamics.Agent.Coordinator_service
+
+"ReStarting AppDynamics agent coordinator service"
+ReStart-Service AppDynamics.Agent.Coordinator_service
+
+"Wait for 10 sec..."
+Start-Sleep -s 10
+
+#Start the service only if the start startService flag is true
+#if ($blnStartService.ToLower() -eq "true"){
+#  foreach ($winServiceName in $arrWinServiceName) {
+    
+#    "Start-Service $winServiceName"
+#    Start-Service $winServiceName
+  
+#  }
+  
+#}
