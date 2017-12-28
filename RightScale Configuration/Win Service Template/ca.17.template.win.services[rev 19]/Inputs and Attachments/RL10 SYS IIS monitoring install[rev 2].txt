@@ -1,0 +1,43 @@
+
+INPUTS ATTACHMENTS 
+=================== 
+[
+    {
+        "created_at": "2016/03/10 17:55:23 +0000", 
+        "digest": "6025d4ece73e1d7a3de5654f123d49ee", 
+        "download_url": "https://island1.rightscale.com/attachments/1/6025d4ece73e1d7a3de5654f123d49ee?md5=6025d4ece73e1d7a3de5654f123d49ee&expiration=1514427136&signature=TlrEUsTp1h0zPAudM%2FQd72Z9ca8OAMxQsI2UEnC5PLLpRzOmoV1rYJgOKSzB%0AJ8A4FXy1sBksLU4g%2BSf0YY26%2FkqJFsbKIA%2FvGn1k0tjMC%2B5wwzLH7XTOQbZ7%0AIAXaarXhBfKFlomMteQCqRo9fF5r%2FeyKY9pwFAS%2BXrCm%2B8gVNRQ%3D%0A&signer=us-3&filename=IisMonitors.zip", 
+        "filename": "IisMonitors.zip", 
+        "id": "598187003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/559491003/attachments/598187003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/559491003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "1377", 
+        "updated_at": "2016/03/10 17:55:23 +0000"
+    }, 
+    {
+        "created_at": "2016/03/10 17:55:23 +0000", 
+        "digest": "15f7debf763635005a4d0b7dbc6995cb", 
+        "download_url": "https://island1.rightscale.com/attachments/1/15f7debf763635005a4d0b7dbc6995cb?md5=15f7debf763635005a4d0b7dbc6995cb&expiration=1514427136&signature=gSdhyFquhKmI5Th6jpD0E7054T3ymLT%2FFj%2FQFgn6ktqEu%2FNsxt2IHGADxbUQ%0AkN%2Bb%2BhdUsbZRvfJF1iwMzJVnhLkrH%2B9P9KuQj33fKnAofof%2BSmO9iY%2F42FRW%0AieE6gJeHPjCIli%2BKyOSokOAYDy2s8xJXLlPdn9iu%2BMxhUFscMGs%3D%0A&signer=us-3&filename=iis-monitoring.ps1", 
+        "filename": "iis-monitoring.ps1", 
+        "id": "598188003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/559491003/attachments/598188003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/559491003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "3761", 
+        "updated_at": "2016/03/10 17:55:23 +0000"
+    }
+]

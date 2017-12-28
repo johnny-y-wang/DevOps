@@ -1,0 +1,241 @@
+INPUTS JSON 
+=================== 
+[
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_DPL_CONFIG_ENCRYPTION_KEY", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_SA_RELEASE_FILE_S3_KEY", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_SA_ARR_CONFIG_FILE_S3_KEY", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_SA_BOOL_START_SERVICE", 
+        "possible_values": [
+            "text:true", 
+            "text:false"
+        ], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_DPL_REGION", 
+        "possible_values": [
+            "text:us-east-1", 
+            "text:us-west-2"
+        ], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_SA_BOOL_ENCRYPT_CONFIG", 
+        "possible_values": [
+            "text:true", 
+            "text:false"
+        ], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_SA_CRED_CONFIG_CONNSTRINGS", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_SA_TIER_NAME", 
+        "possible_values": [
+            "text:Submission", 
+            "text:SWFLargeMember", 
+            "text:SWFLargeSDS", 
+            "text:SWFSmallMember", 
+            "text:Mobile-Tier", 
+            "text:AccountRollover"
+        ], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_SA_ARR_INSTALL_FOLDER_PATH", 
+        "possible_values": [
+            "text:C:\\CACloud\\SWFLargeDecider,C:\\CACloud\\SWFLargeActivity", 
+            "text:C:\\CACloud\\SWFSmallDecider,C:\\CACloud\\SWFSmallActivity", 
+            "text:C:\\CACloud\\AppSubmissionMessageProcessor,C:\\CACloud\\RecSubmissionMessageProcessor", 
+            "text:C:\\CACloud\\PushNotification", 
+            "text:C:\\CACloud\\SWFLargeDecider-Member,C:\\CACloud\\SWFLargeActivity-Member,C:\\CACloud\\SWFLargeDecider-SDS,C:\\CACloud\\SWFLargeActivity-SDS", 
+            "text:C:\\CACloud\\SWFSmallDecider-Member,C:\\CACloud\\SWFSmallActivity-Member,C:\\CACloud\\SWFLargeDecider-SDS,C:\\CACloud\\SWFLargeActivity-SDS", 
+            "text:C:\\CACloud\\AccountRolloverMessageProcessor", 
+            "text:C:\\CACloud\\RecSubmissionMessageProcessor"
+        ], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_SA_ARR_EXE_FILE_NAME", 
+        "possible_values": [
+            "text:SWFDecider,SWFActivities", 
+            "text:AppSubmissionMessageProcessor,RecSubmissionMessageProcessor", 
+            "text:SWFDecider,SWFActivities,SWFDecider,SWFActivities", 
+            "text:AccountRolloverMessageProcessor", 
+            "text:RecSubmissionMessageProcessor"
+        ], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_SA_ARR_BUILD_SOURCE_FOLDER_PATH", 
+        "possible_values": [
+            "text:Batch\\SWFDecider\\bin\\release,Batch\\SWFActivities\\bin\\release", 
+            "text:Batch/AppSubmissionMessageProcessor/bin/release,Batch/RecSubmissionMessageProcessor/bin/release", 
+            "text:Batch\\SWFDecider\\bin\\release,Batch\\SWFActivities\\bin\\release,Batch\\SWFDecider\\bin\\release,Batch\\SWFActivities\\bin\\release", 
+            "text:Batch/AccountRolloverMessageProcessor/bin/release", 
+            "text:Batch/RecSubmissionMessageProcessor/bin/release"
+        ], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_SA_ARR_WIN_SERVICE_NAME", 
+        "possible_values": [
+            "text:SWFLargeDecider,SWFLargeActivity", 
+            "text:SWFSmallDecider,SWFSmallActivity", 
+            "text:AppSubmissionMessageProcessor,RecSubmissionMessageProcessor", 
+            "text:CAPushNotification", 
+            "text:SWFLargeDecider-Member,SWFLargeActivity-Member,SWFLargeDecider-SDS,SWFLargeActivity-SDS", 
+            "text:SWFSmallDecider-Member,SWFSmallActivity-Member,SWFLargeDecider-SDS,SWFLargeActivity-SDS", 
+            "text:AccountRolloverMessageProcessor", 
+            "text:SWFLargeDecider-SDS,SWFLargeActivity-SDS", 
+            "text:RecSubmissionMessageProcessor"
+        ], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_SA_ARR_ADD_CONFIG_FILE_S3_KEY", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_GBL_DOWNLOAD_FOLDER_PATH", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_GBL_OPS_BUCKET_NAME", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_GBL_LOGGING_LEVEL", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_GBL_RS_LIB_FILE_PATH", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_GLB_FORCE_EXECUTE", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_SA_CRED_CONFIG_APPSETTINGS", 
+        "possible_values": [], 
+        "required": true
+    }
+]

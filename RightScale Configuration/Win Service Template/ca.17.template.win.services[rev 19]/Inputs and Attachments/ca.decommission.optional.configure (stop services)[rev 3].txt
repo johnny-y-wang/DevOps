@@ -1,0 +1,14 @@
+INPUTS JSON 
+=================== 
+[
+    {
+        "advanced": false, 
+        "category_name": "CA GENERAL", 
+        "default_value": null, 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_SA_ARR_WIN_SERVICE_NAME", 
+        "possible_values": [], 
+        "required": true
+    }
+]
