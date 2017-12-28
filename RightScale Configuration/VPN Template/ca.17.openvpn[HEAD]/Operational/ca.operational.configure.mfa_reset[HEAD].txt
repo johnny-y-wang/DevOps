@@ -1,4 +1,0 @@
-#!/bin/bash
-
-#sudo /usr/local/openvpn_as/scripts/confdba -us -p $CA_SA_USERNAME
-sudo /usr/local/openvpn_as/scripts/confdba -u -m -k pvt_google_auth_secret_locked -v false -p $CA_SA_USERNAME
