@@ -1,0 +1,103 @@
+INPUTS JSON 
+=================== 
+[
+    {
+        "advanced": false, 
+        "category_name": "Uncategorized", 
+        "default_value": "cred:prod.rundeck.rundeckReader", 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_DPL_RUNDECKREADER_PWD", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "Uncategorized", 
+        "default_value": "text:rundeck-runnerB", 
+        "description": "Short Host Name", 
+        "kind": "string", 
+        "name": "CA_DPL_RUNDECK_HOST", 
+        "possible_values": [
+            "text:rundeck-runnerA", 
+            "text:rundeck-runnerB"
+        ], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "Database", 
+        "default_value": "cred:prod.rundeck.rundeckReader17", 
+        "description": "Rundeck Reader17", 
+        "kind": "string", 
+        "name": "CA_DPL_RUNDECKREADER17_PWD", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "SSH", 
+        "default_value": "key:prod.15.linux.rundeck2github:6", 
+        "description": "rundeck 2 github", 
+        "kind": "string", 
+        "name": "CA_DPL_GITHUB_SSH_KEY", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "Uncategorized", 
+        "default_value": "text:rundeck-runnerB.west.devops.commonapp.net", 
+        "description": "Full DNS name", 
+        "kind": "string", 
+        "name": "CA_DPL_RUNDECK_DNS", 
+        "possible_values": [
+            "text:rundeck-runnerB.west.devops.commonapp.net", 
+            "text:rundeck-runnerA.west.devops.commonapp.net", 
+            "text:rundeck-runnerA.oregon.devops.commonapp.net"
+        ], 
+        "required": true
+    }
+]
+INPUTS ATTACHMENTS 
+=================== 
+[
+    {
+        "created_at": "2016/01/19 23:50:32 +0000", 
+        "digest": "a228c38037c13064faf1c080c430dc18", 
+        "download_url": "https://island1.rightscale.com/attachments/1/a228c38037c13064faf1c080c430dc18?md5=a228c38037c13064faf1c080c430dc18&expiration=1514443202&signature=Jz0lAcZLssPqliDIMiM1nB2GEorfPfYvcFAFA8I6S96%2BylrbnXzyN52phE%2FV%0AGER%2B1Afmt6hoxT3g3H9fvVGo0cYAG3GrrhBGKWo5jLGQb2ExLHQvAMcJNoDa%0Ar2Gmoif%2B3CXDXNb%2B2if8LzTNqQVPQITtl4dKHgwaDhBWBEvD98M%3D%0A&signer=us-3&filename=vimrc", 
+        "filename": "vimrc", 
+        "id": "595653003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/556582003/attachments/595653003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/556582003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "52", 
+        "updated_at": "2016/01/19 23:50:32 +0000"
+    }, 
+    {
+        "created_at": "2016/01/19 23:50:32 +0000", 
+        "digest": "98355f90421fbed12132718663c2638d", 
+        "download_url": "https://island1.rightscale.com/attachments/1/98355f90421fbed12132718663c2638d?md5=98355f90421fbed12132718663c2638d&expiration=1514443202&signature=sfuOg%2B0Fd2QooryEa%2FgvBBsbh9bZnUeH03lJM3ciTQli%2FiP2t2gElfniwuw8%0AXdHx8sp4dJ7%2FUOF8eLyoBh9gOFkHK4nJ8WyTDVCvPCFSd0UHA3eqnCvh2eya%0AwLJOZ4AvGdoZDSgUxc2TZH1rOZf1UDIuarMi0f4lj5aPIdSYRDk%3D%0A&signer=us-3&filename=bashrc", 
+        "filename": "bashrc", 
+        "id": "595664003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/556582003/attachments/595664003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/556582003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "663", 
+        "updated_at": "2016/01/29 23:53:58 +0000"
+    }
+]
