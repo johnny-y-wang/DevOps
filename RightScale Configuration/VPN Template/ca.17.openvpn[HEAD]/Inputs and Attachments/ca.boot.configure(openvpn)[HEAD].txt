@@ -1,0 +1,154 @@
+INPUTS JSON 
+=================== 
+[
+    {
+        "advanced": false, 
+        "category_name": "Uncategorized", 
+        "default_value": "blank", 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_SA_COPY_USERS", 
+        "possible_values": [
+            "text:True", 
+            "text:False"
+        ], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "Uncategorized", 
+        "default_value": "text:prod_userprop.db", 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_SA_USERPROP_DB", 
+        "possible_values": [
+            "text:ps_userprop.db", 
+            "text:lt_userprop.db", 
+            "text:prod_userprop.db"
+        ], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "Uncategorized", 
+        "default_value": "cred:prod.17.openvpn.pw", 
+        "description": "for UID=openvpn", 
+        "kind": "string", 
+        "name": "CA_SA_CRED_OPENVPN_PWD", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "Uncategorized", 
+        "default_value": "text:access17.prod.commonapp.net", 
+        "description": "choose between access and vpn", 
+        "kind": "string", 
+        "name": "CA_SA_VPN_HOSTNAME", 
+        "possible_values": [
+            "text:access.ps.commonapp.net", 
+            "text:access.stage.commonapp.net", 
+            "text:access.prod.commonapp.net"
+        ], 
+        "required": true
+    }
+]
+INPUTS ATTACHMENTS 
+=================== 
+[
+    {
+        "created_at": "2016/02/02 03:01:17 +0000", 
+        "digest": "83cca955e78ad24f216fd88df33f4651", 
+        "download_url": "https://island1.rightscale.com/attachments/1/83cca955e78ad24f216fd88df33f4651?md5=83cca955e78ad24f216fd88df33f4651&expiration=1514442224&signature=B%2BMCxFTtEWyRNa76ftefcJ%2FCcw3tsNgK0jNkTjDBncn9XyAfZsyIE8ubBBf%2B%0AQKOG8ChcyDYkhOk7rUV89T5MZvPRZ7bZzt94yjl3hrmYfntsOGsVJ9WzlNjl%0AcohFWKqh00z0f5V%2BFHPp1z9x5WN8IMyxvtKtRVZfbV4EYBbI8p0%3D%0A&signer=us-3&filename=_ovpn-init", 
+        "filename": "_ovpn-init", 
+        "id": "596634003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/557391003/attachments/596634003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/557391003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "35219", 
+        "updated_at": "2017/02/10 17:20:28 +0000"
+    }, 
+    {
+        "created_at": "2016/02/25 18:48:00 +0000", 
+        "digest": "ae161484654e4fe3c7dbfa030fc2ca2e", 
+        "download_url": "https://island1.rightscale.com/attachments/1/ae161484654e4fe3c7dbfa030fc2ca2e?md5=ae161484654e4fe3c7dbfa030fc2ca2e&expiration=1514442224&signature=G49IdURv2VXE7jwEg6BaLAJTjHNzxQKQxXv%2BxqJSeTLAjhVT8Evj5no232fT%0AX%2F7bTDjeIJ3HrWMli8Yot0XeJCcnOLIRCMBojUVYt%2BTJiAh6mdRDyUgnPN8V%0AHGa1GCLt6QaP5MagEZ8woYSuwxqNeUzmbb35Xm1PKhI0mEu8ef4%3D%0A&signer=us-3&filename=ps_userprop.db", 
+        "filename": "ps_userprop.db", 
+        "id": "597676003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/557391003/attachments/597676003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/557391003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "14336", 
+        "updated_at": "2017/02/10 17:21:15 +0000"
+    }, 
+    {
+        "created_at": "2016/02/25 18:48:16 +0000", 
+        "digest": "929dda99b003d7c14fb2e6de4bad1613", 
+        "download_url": "https://island1.rightscale.com/attachments/1/929dda99b003d7c14fb2e6de4bad1613?md5=929dda99b003d7c14fb2e6de4bad1613&expiration=1514442224&signature=d6U7KnNBOmY7YOhcH22SioJA6HuSm4tWdVHVYwWH%2BSvXsNZB%2FgmQikOzDZGD%0AdOlvN5J7eCzoQumLZbgVkYz7tT2uFBebpZhUE2xiYoS7LAM4PIUKIdXL7nZQ%0AjJVFHbspKmmzwij9gLMRr81h3o4z4poryXRouPQbA1e1ge3IKrk%3D%0A&signer=us-3&filename=lt_userprop.db", 
+        "filename": "lt_userprop.db", 
+        "id": "597677003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/557391003/attachments/597677003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/557391003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "35840", 
+        "updated_at": "2017/02/10 17:21:15 +0000"
+    }, 
+    {
+        "created_at": "2016/08/05 22:10:12 +0000", 
+        "digest": "d24a53d321312d4ccd134f638e3ead53", 
+        "download_url": "https://island1.rightscale.com/attachments/1/d24a53d321312d4ccd134f638e3ead53?md5=d24a53d321312d4ccd134f638e3ead53&expiration=1514442224&signature=loJmHXlaPgRqqz%2FSL4yaAsXwEzWDfZioMusYhSs8FBKUqwEftgOj50%2Fp7ERo%0AqwYEdTT3w%2BlVyJ3SkOtL4%2Bha1I1SwDBcxqUvyNW42VzyCM9zqnOfpcWVmgpc%0A%2BlG9Zv5AiRoHESmUwYD%2Be6aoqhgX2JoelqiYtuS7pFxRX6iMgPM%3D%0A&signer=us-3&filename=prod_userprop.db", 
+        "filename": "prod_userprop.db", 
+        "id": "606748003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/557391003/attachments/606748003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/557391003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "35840", 
+        "updated_at": "2017/12/13 02:23:14 +0000"
+    }, 
+    {
+        "created_at": "2017/09/12 15:29:43 +0000", 
+        "digest": "7fd5891477f30fae209e2f4f5340c6d6", 
+        "download_url": "https://island1.rightscale.com/attachments/1/7fd5891477f30fae209e2f4f5340c6d6?md5=7fd5891477f30fae209e2f4f5340c6d6&expiration=1514442224&signature=CVgEJiWibwWDjISnUJjWx8nw788Z9biOVwFRNWsFrM50N5iapJXKuqqnn3JS%0A%2FF8XA9xy1ijaCB1WrZaUz7%2Bv9cY8IB7iYgTRiB7QFKc5WbUbeTnLHGi1EgfL%0AUfWIodRRBks0SyZ12ycWePPpDUYJ1Edsv2gqAVGdSQQZo55Zhsc%3D%0A&signer=us-3&filename=openvpn-as-2.1.12-CentOS7.x86_64.rpm", 
+        "filename": "openvpn-as-2.1.12-CentOS7.x86_64.rpm", 
+        "id": "645863003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/557391003/attachments/645863003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/557391003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "33792696", 
+        "updated_at": "2017/12/13 02:24:57 +0000"
+    }
+]
