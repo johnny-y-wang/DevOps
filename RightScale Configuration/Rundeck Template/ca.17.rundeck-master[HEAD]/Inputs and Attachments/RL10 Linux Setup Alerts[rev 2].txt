@@ -1,0 +1,18 @@
+INPUTS JSON 
+=================== 
+[
+    {
+        "advanced": true, 
+        "category_name": "RightScale", 
+        "default_value": "text:auto", 
+        "description": "Determine the method of monitoring to use, either RightLink monitoring or collectd. Setting to\n'auto' will use code to select method.\n", 
+        "kind": "string", 
+        "name": "MONITORING_METHOD", 
+        "possible_values": [
+            "text:auto", 
+            "text:collectd", 
+            "text:rightlink"
+        ], 
+        "required": true
+    }
+]

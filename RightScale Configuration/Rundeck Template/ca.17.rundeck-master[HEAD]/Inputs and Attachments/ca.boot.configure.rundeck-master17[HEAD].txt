@@ -1,0 +1,759 @@
+INPUTS JSON 
+=================== 
+[
+    {
+        "advanced": false, 
+        "category_name": "Uncategorized", 
+        "default_value": "cred:prod.rundeck.rundeckReader", 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_DPL_RUNDECKREADER_PWD", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "Uncategorized", 
+        "default_value": "text:Y", 
+        "description": "Disable job execution by Inject \" <executionEnabled>false</executionEnabled>\" into every job", 
+        "kind": "string", 
+        "name": "CA_DPL_DISABLE_EXECUTION", 
+        "possible_values": [
+            "text:Y", 
+            "text:N"
+        ], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "Uncategorized", 
+        "default_value": "text:N", 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_DPL_START_SERVICE", 
+        "possible_values": [
+            "text:N", 
+            "text:Y"
+        ], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "Uncategorized", 
+        "default_value": "text:N", 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_DPL_CREATE_PROJ_JOB", 
+        "possible_values": [
+            "text:Y", 
+            "text:N"
+        ], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "Database", 
+        "default_value": "text:rundeck2", 
+        "description": "rundeck DBS Schema", 
+        "kind": "string", 
+        "name": "CA_DPL_RUNDECK_DBS", 
+        "possible_values": [
+            "text:rundeck", 
+            "text:rundeck2", 
+            "text:rundeck_2017_02"
+        ], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "Uncategorized", 
+        "default_value": "key:prod17.linux:6", 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_DPL_RUNNER_SSH_KEY", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "Uncategorized", 
+        "default_value": "text:Y", 
+        "description": "Use MysqlDB as rundeck storage or Local File", 
+        "kind": "string", 
+        "name": "CA_DPL_USEMYSQL", 
+        "possible_values": [
+            "text:Y", 
+            "text:N"
+        ], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "Uncategorized", 
+        "default_value": "key:prod17.linux.rundeck2github:6", 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_DPL_GITHUB_SSH_KEY", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "Uncategorized", 
+        "default_value": "text:rundeck-masterA.oregon.devops.commonapp.net", 
+        "description": "Full DNS name", 
+        "kind": "string", 
+        "name": "CA_DPL_RUNDECK_DNS", 
+        "possible_values": [
+            "text:rundeck-masterA.west.devops.commonapp.net", 
+            "text:rundeck-masterB.west.devops.commonapp.net", 
+            "text:rundeck-masterB.oregon.devops.commonapp.net", 
+            "text:rundeck-masterA.oregon.devops.commonapp.net"
+        ], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "Uncategorized", 
+        "default_value": "text:Rundeck-MasterA", 
+        "description": "Short Host Name", 
+        "kind": "string", 
+        "name": "CA_DPL_RUNDECK_HOST", 
+        "possible_values": [
+            "text:Rundeck-MasterB", 
+            "text:Rundeck-MasterA"
+        ], 
+        "required": true
+    }
+]
+INPUTS ATTACHMENTS 
+=================== 
+[
+    {
+        "created_at": "2017/03/07 12:55:25 +0000", 
+        "digest": "a228c38037c13064faf1c080c430dc18", 
+        "download_url": "https://island1.rightscale.com/attachments/1/a228c38037c13064faf1c080c430dc18?md5=a228c38037c13064faf1c080c430dc18&expiration=1514442854&signature=qbSEa4lg%2FLNbjcsW5Eoxy7z5XsOj6Hvl5ORSXsFu48vnESFjqHivh8sBk1ft%0AqW2gpMuffqRAl1EdgIEu%2Fmptp689bZkygOGK1D61I8VY%2F8uoZQCPA5%2FopvlN%0ABYxxPjRpf9lEF%2FUHVEmCzi04WBKQ5n2CVeoBTqVcxI%2FNJidMzTA%3D%0A&signer=us-3&filename=vimrc", 
+        "filename": "vimrc", 
+        "id": "625122003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625122003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "52", 
+        "updated_at": "2017/03/07 12:55:25 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:25 +0000", 
+        "digest": "dda60d61512571a2df59e09e174fcbe4", 
+        "download_url": "https://island1.rightscale.com/attachments/1/dda60d61512571a2df59e09e174fcbe4?md5=dda60d61512571a2df59e09e174fcbe4&expiration=1514442854&signature=jkcilZMLDKhx6sJXAQmY%2BWiiJyGxwh6ygVoWvUB3lsOrQoYwUSLqZ5jhLIHT%0Aw5WTQuw2nyaNFPpN6aktUpjcv2VqpMtHEw1DjsHDAtf7p7bACPh8YA8QcnJn%0AnwuSxXCdz9GxXUHibML4pRo6EhYToVyjlJVGEkBuyYy0SMIydBA%3D%0A&signer=us-3&filename=ChangePassword.sh", 
+        "filename": "ChangePassword.sh", 
+        "id": "625123003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625123003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "819", 
+        "updated_at": "2017/03/07 12:55:25 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:25 +0000", 
+        "digest": "ed5be36749f82b6eab8a646c78dfec25", 
+        "download_url": "https://island1.rightscale.com/attachments/1/ed5be36749f82b6eab8a646c78dfec25?md5=ed5be36749f82b6eab8a646c78dfec25&expiration=1514442854&signature=CLp4D6sSCRHX%2B4tQdFLp8gpQKmPg0C3itkUlnxvrgfSqwPE5bE5uiPS%2FPuXk%0AgL7rlIIwpVnnO2AQ2TYlfWxoUkG3BnsbGJMWWkmsIgNXMifSXG%2Bn8hVoKV%2Fl%0Ac4JBrx4jZC3WPF9ZvoLz95GKlnhjGZ1gdgwrZCpEycpJUoealW4%3D%0A&signer=us-3&filename=framework.properties", 
+        "filename": "framework.properties", 
+        "id": "625124003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625124003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "2221", 
+        "updated_at": "2017/03/07 12:55:25 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:25 +0000", 
+        "digest": "8b5cc7a17c4e0619ecf80ae89034bf68", 
+        "download_url": "https://island1.rightscale.com/attachments/1/8b5cc7a17c4e0619ecf80ae89034bf68?md5=8b5cc7a17c4e0619ecf80ae89034bf68&expiration=1514442854&signature=MOi2ozFFuHOgD7Y87gbJ%2Fz%2BISAUDxuJi5AsXj2vflML1Wb7Lb5pGXP7ySqMg%0AaDB%2Fokpc9AcmZNsVwFeiy%2FUMmdsopgLYj6p6KC2pLJx7S%2FZQRdmtl8r3q%2FXk%0A8VXXMcn4OCBK4m4ImuwCKpSCEUVvmx6otLRGm0CLp9lb3iy3voM%3D%0A&signer=us-3&filename=profile", 
+        "filename": "profile", 
+        "id": "625125003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625125003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "1784", 
+        "updated_at": "2017/03/07 12:55:25 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:25 +0000", 
+        "digest": "72fe7ceaf7a987f9406571f1f783ef8e", 
+        "download_url": "https://island1.rightscale.com/attachments/1/72fe7ceaf7a987f9406571f1f783ef8e?md5=72fe7ceaf7a987f9406571f1f783ef8e&expiration=1514442854&signature=XlTaX5oih8GVjbcQngsNwCKnPL2h7s5M1UDV%2BkhkCkl9ZsPvdlYKQcLz%2Blww%0A3VyIhIrUcYCwbug723AbBrvvsj4bVKFX3ZOMiVtY1xci4Nv8pi3NkfpbDoB2%0AFtK%2FWV5Duh2ECgIEQuiOZYy4PQvSLjIexiWDQ5QBTZScZSpcI%2B0%3D%0A&signer=us-3&filename=readonly.aclpolicy", 
+        "filename": "readonly.aclpolicy", 
+        "id": "625126003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625126003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "1307", 
+        "updated_at": "2017/03/07 12:55:25 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:25 +0000", 
+        "digest": "51f36c77f26b325ae0a07556fb8bfa68", 
+        "download_url": "https://island1.rightscale.com/attachments/1/51f36c77f26b325ae0a07556fb8bfa68?md5=51f36c77f26b325ae0a07556fb8bfa68&expiration=1514442854&signature=eo8M6jwoa%2FBGYuWOEHyE8F9diP4OonzC1%2FCwmSIbEY050Nm4eWB7HcJLFrLq%0AiX86bIWk3HRisHvt7jvmSmYCYR5QUMcOJUVKXpGRQPFKCGzZw%2BE%2F1ivkfo8O%0ATi6XVXvoxuQvrwF2O7f36VLkWB4RdDGDh7KxWPX9JW6MqTPFve0%3D%0A&signer=us-3&filename=rundeck-config.properties", 
+        "filename": "rundeck-config.properties", 
+        "id": "625127003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625127003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "816", 
+        "updated_at": "2017/03/07 12:55:25 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:25 +0000", 
+        "digest": "9004513e362ebc03519f15a4b1f4192c", 
+        "download_url": "https://island1.rightscale.com/attachments/1/9004513e362ebc03519f15a4b1f4192c?md5=9004513e362ebc03519f15a4b1f4192c&expiration=1514442854&signature=pGgyfOwY8jDJ%2B6%2BLoouwJaI9QBuPyQ07685UHwljqUIOlkO271Fa5X30lI2z%0ASVFMQ6V%2Bi4YlGVd8wZ7eZphMLI1gQCdZ91rAsC2MXLy9qUoKjhDIAv7bVQgs%0A6rtSUkLyFhA8g%2B%2FcA3Rgv7KRAud8ZeyjPcGJaNgfZyzS3omXDI8%3D%0A&signer=us-3&filename=rundeck-hipchat-plugin-1.5.0.jar", 
+        "filename": "rundeck-hipchat-plugin-1.5.0.jar", 
+        "id": "625128003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625128003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "1902557", 
+        "updated_at": "2017/03/07 12:55:25 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:25 +0000", 
+        "digest": "9c4452fbfe33b0c9702247d9da3b7efd", 
+        "download_url": "https://island1.rightscale.com/attachments/1/9c4452fbfe33b0c9702247d9da3b7efd?md5=9c4452fbfe33b0c9702247d9da3b7efd&expiration=1514442854&signature=gnf%2FWhJBHv2WBUTvSe6exqtBvuw5lfA%2FlB01db0qfX4%2F%2F%2FG2BLQS%2F8630ppc%0AQx%2BUTSPGGcK%2FhyoY1WzZZDzTtLnoK6mHjwqZrjRcp4Dlka%2FV0kacWYg9zDyI%0AqEpsZEyDU%2BR1wyU5%2B0BrtilsXzj3i4PJ8SdRqTsa%2FLm52gVkcmo%3D%0A&signer=us-3&filename=bashrc", 
+        "filename": "bashrc", 
+        "id": "625129003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625129003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "942", 
+        "updated_at": "2017/03/07 13:13:30 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:25 +0000", 
+        "digest": "771d72da64b634986ea0c1ea0fe4b782", 
+        "download_url": "https://island1.rightscale.com/attachments/1/771d72da64b634986ea0c1ea0fe4b782?md5=771d72da64b634986ea0c1ea0fe4b782&expiration=1514442854&signature=X1QoeYY%2FaYsI9OGtVzwEeh0UL0jF7NMB0kP2pEUOgUH8bK76FLfA63xcN9QQ%0AJ%2Bsk7RH%2BcbAjaEmmif9gV%2FlYhBrUcGKi0SCPcHsWCBCJ%2FkvUn9KVdf9Hygpo%0ADtODgg%2BjaLwqm5natGz1pYLJqHMDTcQxIkIdOuJX7%2FYD7IDNemg%3D%0A&signer=us-3&filename=privilege.aclpolicy", 
+        "filename": "privilege.aclpolicy", 
+        "id": "625130003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625130003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "1023", 
+        "updated_at": "2017/03/07 12:55:25 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:25 +0000", 
+        "digest": "f76e72f0a06ec0618538f06bda2433e1", 
+        "download_url": "https://island1.rightscale.com/attachments/1/f76e72f0a06ec0618538f06bda2433e1?md5=f76e72f0a06ec0618538f06bda2433e1&expiration=1514442854&signature=A9w2CaJWUDldNukpDvuEltP26e1lm5jn73bPOHmTD%2BlN1Qp3319SG%2BqPcCUb%0ATHjVfx5YgZtrvZTfT%2FeJnhSv3a1kNodtJD7VJkAJMTaWMEoQIuoJ18LusNOW%0AogSfx%2BUDJISJiqJjZMkrKX1BEptxCoYOiBngcOtzOlgIrzAPjIE%3D%0A&signer=us-3&filename=rundeck-ec2-nodes-plugin-1.5.1.jar", 
+        "filename": "rundeck-ec2-nodes-plugin-1.5.1.jar", 
+        "id": "625131003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625131003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "5406506", 
+        "updated_at": "2017/03/07 12:55:25 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:25 +0000", 
+        "digest": "3cba86ed44b9ff511629f50d7ed57475", 
+        "download_url": "https://island1.rightscale.com/attachments/1/3cba86ed44b9ff511629f50d7ed57475?md5=3cba86ed44b9ff511629f50d7ed57475&expiration=1514442854&signature=mz11CvkMHpvTQ5UuA2H0PD4IZuG2F%2Fe5S6iop8QkdBVg2LttxBeTKELjhCBb%0A9Dz2tJahnQ2qkOgfyfIE37MmFgjY1UXMOOXqCLlcxox5kvZowTQcUbT2nLEe%0AuZcQ8oMh03zsEyfcvEdaL5zzC4x8yepIice1fVxMURbSH%2BEXcZk%3D%0A&signer=us-3&filename=ec2-mapping.properties", 
+        "filename": "ec2-mapping.properties", 
+        "id": "625132003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625132003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "1215", 
+        "updated_at": "2017/03/07 12:55:25 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:26 +0000", 
+        "digest": "d2d416889387979a2540566bcfd7d534", 
+        "download_url": "https://island1.rightscale.com/attachments/1/d2d416889387979a2540566bcfd7d534?md5=d2d416889387979a2540566bcfd7d534&expiration=1514442854&signature=H86le06rAZL%2FAbcDfOH%2FZAg8pDa2wrQmvKvd417sTmi1AQypS8b5b0AqQ4dI%0ANfivnooz1dglB2Kj1Iooj9gbDPvz14z4uHxObF5e3QESRiUNwFv1ZkIDy3od%0Af9CSpRRtw8hn41QX2CPba3ge%2FhjDdJfAjILVZi04ccZO%2FCgDmV8%3D%0A&signer=us-3&filename=prod15-ec2-mapping.properties", 
+        "filename": "prod15-ec2-mapping.properties", 
+        "id": "625133003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625133003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "1239", 
+        "updated_at": "2017/03/07 12:55:26 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:26 +0000", 
+        "digest": "0edcebbf014b04a66dcb642dfd7c55dd", 
+        "download_url": "https://island1.rightscale.com/attachments/1/0edcebbf014b04a66dcb642dfd7c55dd?md5=0edcebbf014b04a66dcb642dfd7c55dd&expiration=1514442854&signature=FYdr4a3TtQAWJWlZxuJVuMGtWTUBq%2B3Xe2Y3Tj2E5PnsqbGyP9U%2FemZrKiG7%0AxiWyHlMGcFNqB806jE1HU2o6rv0fPRJVfAUwpGoG6H9snfM%2FbB8KdTyMg0Dn%0A4CuhMDdSphT8INxPuxxuhKYqurj5kVyirJ%2Fl5WbTVQxHGV7i9MU%3D%0A&signer=us-3&filename=project.properties", 
+        "filename": "project.properties", 
+        "id": "625134003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625134003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "549", 
+        "updated_at": "2017/03/07 12:55:26 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:26 +0000", 
+        "digest": "d7f07e5ead9b0921b5563dd7c69eec12", 
+        "download_url": "https://island1.rightscale.com/attachments/1/d7f07e5ead9b0921b5563dd7c69eec12?md5=d7f07e5ead9b0921b5563dd7c69eec12&expiration=1514442854&signature=bCcew19MEubNjUdgyFvG7ajfbJRgaOdi59TsoBUt1S57ohwYT9mEDwee8VJD%0Aa0vkLWAqJgQs4xnDahnveOJxegHIWVK%2F4IRaoubFrWXcofh0ZKN%2FhpCeWY%2Bn%0A0UswfcP40Qs%2FfTNS%2FtYWRqoxOzrc3qO58psNF%2F1kn5DDiWrQZXk%3D%0A&signer=us-3&filename=win-mapping.properties", 
+        "filename": "win-mapping.properties", 
+        "id": "625135003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625135003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "1214", 
+        "updated_at": "2017/03/07 12:55:26 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:26 +0000", 
+        "digest": "83c80e7499cebdaed03c0f175b2f75e2", 
+        "download_url": "https://island1.rightscale.com/attachments/1/83c80e7499cebdaed03c0f175b2f75e2?md5=83c80e7499cebdaed03c0f175b2f75e2&expiration=1514442854&signature=g%2Bmw5qEtV7DxOX8rrp9KaeP0BBphnfpxH%2BKR6pz%2FijV4LQz6dzP5x011hsqD%0AFS848SAWGJwtLzTu4X8dqIE%2Ba8olWRVHwNGn5t4fvZKJFp7cRnMay0gyJ8p3%0A%2BRTM5Y6Avp5l11pwS%2FgRP3U4dmOmM8mMpSQmQHJKjilG2FR3BSc%3D%0A&signer=us-3&filename=resources.xml", 
+        "filename": "resources.xml", 
+        "id": "625136003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625136003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "1498", 
+        "updated_at": "2017/03/07 12:55:26 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:26 +0000", 
+        "digest": "eabdc4ef830a4b81d9c69db21854f488", 
+        "download_url": "https://island1.rightscale.com/attachments/1/eabdc4ef830a4b81d9c69db21854f488?md5=eabdc4ef830a4b81d9c69db21854f488&expiration=1514442854&signature=dt3tzCrG5RqGN7b4%2FtcE82yTKDLHW3onf8KewT9ddkLpC9HvmLC0sXzFGWCe%0Ad3sucGl7vc79SyEyGLvS%2FEMB5%2BXKxk8lCkTd8cs9uzCjfLS4%2F2VlwLCW07fK%0AVD48KO72nx%2B1w%2FqvRxXeg33r1CkQDWvD1uLf9GOQVLMyEwi2IgI%3D%0A&signer=us-3&filename=resources.yaml", 
+        "filename": "resources.yaml", 
+        "id": "625137003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625137003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "822", 
+        "updated_at": "2017/03/07 12:55:26 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:26 +0000", 
+        "digest": "3253cfca5cba0432f5d2c0ba0f615a61", 
+        "download_url": "https://island1.rightscale.com/attachments/1/3253cfca5cba0432f5d2c0ba0f615a61?md5=3253cfca5cba0432f5d2c0ba0f615a61&expiration=1514442854&signature=AYlayhPBmLeYd69sHyc%2FJUI43DMggkWtJ8Rnqk%2FwbzL3DLWAfCh%2B3%2Bj6q0dj%0AHZqquZOAHpQ4e%2BFgUyJPHg45mzN7OzuqPFqaSALifTIQZniJ5nJpLW4zlUqK%0AP5eg1yOkwQx7%2B1P5IElBdoc04EsPoHpkquA79dg7vA0Imv67NN0%3D%0A&signer=us-3&filename=TestingProj.xml", 
+        "filename": "TestingProj.xml", 
+        "id": "625138003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625138003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "689542", 
+        "updated_at": "2017/03/07 12:55:26 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:26 +0000", 
+        "digest": "0d58b8fda927d338e655d01c2f94aefa", 
+        "download_url": "https://island1.rightscale.com/attachments/1/0d58b8fda927d338e655d01c2f94aefa?md5=0d58b8fda927d338e655d01c2f94aefa&expiration=1514442854&signature=KH8ksPAvQOITAGV7KiWgQZS00oyuDYrIvFa3i2tbWzGORr2Df9E60SXVY23R%0ASb1tvE5TuO3bVKxf9pOLuTW89d2hYXX69CktB3zifydlMrOuy0mXEgd2vig3%0AkSx0T21LAPzEhhKy6tV07faYgjjTVbiNgfxONfEelIdU4V8sxyA%3D%0A&signer=us-3&filename=Testing_project.properties", 
+        "filename": "Testing_project.properties", 
+        "id": "625139003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625139003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "1554", 
+        "updated_at": "2017/03/07 23:10:05 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:26 +0000", 
+        "digest": "bbeb5895b83c483fc833de01865beece", 
+        "download_url": "https://island1.rightscale.com/attachments/1/bbeb5895b83c483fc833de01865beece?md5=bbeb5895b83c483fc833de01865beece&expiration=1514442854&signature=tI6tTd%2B029JlQZ43Q1HgC3yD4NajK9xuzOtkfkr2bmNLxJXQInZtbJ1ftntb%0A1mxrA20S87wLCcQyI%2B%2B9%2FVCExefXin8nk0KXcAEqL%2FUO3C2fIUazY1k1TEY5%0AJDa1qj9OjjtIXOGvO0oWu34f5cKduix1s%2BdtXdVx4lJQKCMsgpc%3D%0A&signer=us-3&filename=Testing_resources.xml", 
+        "filename": "Testing_resources.xml", 
+        "id": "625140003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625140003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "1509", 
+        "updated_at": "2017/03/07 12:55:26 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:26 +0000", 
+        "digest": "8cfc6eba8052e21e6c0b4da8adf5f392", 
+        "download_url": "https://island1.rightscale.com/attachments/1/8cfc6eba8052e21e6c0b4da8adf5f392?md5=8cfc6eba8052e21e6c0b4da8adf5f392&expiration=1514442854&signature=Oym8IO%2Bhsktur%2BjvMUnpBLyGNsFgZ%2FIpfW7ez4ezhDwKr4ZHWYg0B1K2RNtL%0AEekBXqWkyFmd5yzca%2F7pRxVZ5FDRHohaTThBc%2BhuMYvaSh1porM%2BiyqbbgR0%0AIcvW16brmIneYVmdT7ezD6KD%2F5ySbfgNIPCse%2BkaXpz5Owez7Nk%3D%0A&signer=us-3&filename=rundeck-ec2-nodes-plugin-1.5.2.jar", 
+        "filename": "rundeck-ec2-nodes-plugin-1.5.2.jar", 
+        "id": "625141003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625141003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "5486021", 
+        "updated_at": "2017/03/07 12:55:26 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:26 +0000", 
+        "digest": "9e76eefb56236adaa272b5dd17409131", 
+        "download_url": "https://island1.rightscale.com/attachments/1/9e76eefb56236adaa272b5dd17409131?md5=9e76eefb56236adaa272b5dd17409131&expiration=1514442854&signature=ZvR8%2FDTspJuFEfaoMNcUoLnLM1hSpwFIXfCTLOdippoCMiuuk%2B50B%2FsrQIbf%0AusnW8eKZAyxoUnIWlP7QNtI9zsYfziIvZJqpHTYYl8F7APAJTNunwrX6h6vI%0AM2BOwTf81V2TmlJVUIPhKAlQrv6TR1VsVpaz%2F%2BtRsIwK4w2VP98%3D%0A&signer=us-3&filename=rundeckd", 
+        "filename": "rundeckd", 
+        "id": "625142003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625142003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "2052", 
+        "updated_at": "2017/03/07 12:55:26 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:26 +0000", 
+        "digest": "3e1704cba877975a1d38e1be011ceac2", 
+        "download_url": "https://island1.rightscale.com/attachments/1/3e1704cba877975a1d38e1be011ceac2?md5=3e1704cba877975a1d38e1be011ceac2&expiration=1514442854&signature=aDbGPdexYxBFuueSmu1PPC0enMzqXfcM5y3Qzd9Hphywc4684t6EAfmWDjnc%0Axl%2BYv5ERMTMd8i7hcLk1jg1Tpae8DcYgdpArPVb4YAZZBbmV3bkd9t8HqReq%0A%2BV21U9%2FLTkTE2EUJwx4lDL96T3tW7N0rWgULAwNtt6p2W0rvR3g%3D%0A&signer=us-3&filename=rd.conf", 
+        "filename": "rd.conf", 
+        "id": "625143003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625143003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "2382", 
+        "updated_at": "2017/03/07 12:55:26 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:26 +0000", 
+        "digest": "2ae8ca081c55c1d727ec6c511bb31ad6", 
+        "download_url": "https://island1.rightscale.com/attachments/1/2ae8ca081c55c1d727ec6c511bb31ad6?md5=2ae8ca081c55c1d727ec6c511bb31ad6&expiration=1514442854&signature=roqv2fnhNqLX8BmXTSWdQpANcvEabrhA%2FVdHvfyiwQ3FB7CuHedBEz9RBaHO%0ACSd3fexNZe68sxDHOvhGanAXaBu8rCvOgCtxuPbJGso9RtZIQP8o3vpiVF75%0A5WCFglkS9j28ZhLJmkyaBBxq8J64ZJlQprEWM%2BiopjongTIqDM0%3D%0A&signer=us-3&filename=rundeck-config.groovy.file", 
+        "filename": "rundeck-config.groovy.file", 
+        "id": "625144003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625144003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "1321", 
+        "updated_at": "2017/03/07 12:55:26 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:26 +0000", 
+        "digest": "0587f07c4b5332d42e0f128456ae9c05", 
+        "download_url": "https://island1.rightscale.com/attachments/1/0587f07c4b5332d42e0f128456ae9c05?md5=0587f07c4b5332d42e0f128456ae9c05&expiration=1514442854&signature=YpYUevNRtUo9FiaBE0Nc%2FpEEO%2BaxOs1uxHbBzM42wb3Ighp23vmxeOw6gwQS%0A4wHqkXihadwwaqFtp5Gw6v8dY3rwnXGtUyChRNZ9ZZH83znK2ge17BoPN2Xm%0AR%2FhcMoyYZXIwkdQ4tZdxPS39PvhBhloBr9tdEjv6BaVJsPHm6eU%3D%0A&signer=us-3&filename=CreateUser.sh", 
+        "filename": "CreateUser.sh", 
+        "id": "625145003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625145003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "562", 
+        "updated_at": "2017/03/07 12:55:26 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:26 +0000", 
+        "digest": "5488f8192c134323354bc0e0994afd1c", 
+        "download_url": "https://island1.rightscale.com/attachments/1/5488f8192c134323354bc0e0994afd1c?md5=5488f8192c134323354bc0e0994afd1c&expiration=1514442854&signature=eCTw6iUmhvJ8oxzJ4w%2B0%2BrIQRfDO1bsJPpDx%2F3GN2FZCGAm82VbfEPWcfFnT%0A2skCf9%2BDEuvGv6qQEsP0ttlRiWTMYQtg5OYSUE1kGPdRTdb%2FotNlxfY%2BZu%2F9%0A8fVElmvmazmgfYt8Y4WSe6Q2gQ8Wyd2Je%2BQMD%2BSHa8Nfdqqnhkc%3D%0A&signer=us-3&filename=DevOps-MgmtProj.xml", 
+        "filename": "DevOps-MgmtProj.xml", 
+        "id": "625146003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625146003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "1010199", 
+        "updated_at": "2017/03/07 12:55:26 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:26 +0000", 
+        "digest": "df70c731c07dfe33d01b8eb96edfb829", 
+        "download_url": "https://island1.rightscale.com/attachments/1/df70c731c07dfe33d01b8eb96edfb829?md5=df70c731c07dfe33d01b8eb96edfb829&expiration=1514442854&signature=ofN2vCGLR9F9hrb2nrCCDGaAFa9UzOL7oL38S4%2FY%2ByjH6X%2BIZ53dD8XRKM0%2F%0Ag0ncOcftNnIClXopqSkhfecTHaUcp2R%2BKbOslsLYIU%2FsB6OrNT6JG8czXZzl%0AFCQtTkVWO3aAkbUzJmH70Iz6DgIQUDamg%2F0rMFbRT83l8AIGe1c%3D%0A&signer=us-3&filename=DevOps-Mgmt_project.properties", 
+        "filename": "DevOps-Mgmt_project.properties", 
+        "id": "625147003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625147003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "1564", 
+        "updated_at": "2017/03/09 00:10:16 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:26 +0000", 
+        "digest": "d2c24a1423f6068fd16bd5ad177bd6e2", 
+        "download_url": "https://island1.rightscale.com/attachments/1/d2c24a1423f6068fd16bd5ad177bd6e2?md5=d2c24a1423f6068fd16bd5ad177bd6e2&expiration=1514442854&signature=TkBC1L1jy0p80HPoaq7c%2FL%2Fcw9O80%2Frr2u56KHrp%2BnDd0mWq%2BVca%2BPJLj8zL%0A4zFW66SICQXb%2B%2BuR0hIlZQopi3mlJ4LnVco3MQA5pQWrq7MokhTHUuqKI2ox%0AkVbMI9viL1IqxLe5b2Zm%2FEj8P%2Btw9Fj6DS1D2u4vsMca7c0ETZg%3D%0A&signer=us-3&filename=DevOps-Mgmt_resources.xml", 
+        "filename": "DevOps-Mgmt_resources.xml", 
+        "id": "625148003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625148003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "1509", 
+        "updated_at": "2017/03/09 00:11:12 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:26 +0000", 
+        "digest": "a3747d9425092ef82528c6242f8da000", 
+        "download_url": "https://island1.rightscale.com/attachments/1/a3747d9425092ef82528c6242f8da000?md5=a3747d9425092ef82528c6242f8da000&expiration=1514442854&signature=gzTXEg2Q7rc1cw7K9%2BOK7WgHyslgEibeoWwMt5LmGQqSJ7r7ooLtDGN1lpqA%0ACUfBstei2fVlEbai%2Fv0KZNfPiwHSDr4pUwudMk4vVfz45R3jDXIFwisBaYVq%0ArYkVZU1heUbtYpdrRY2SUQP9Z855Aj9ONIx7J9HQwzuPbNi79lw%3D%0A&signer=us-3&filename=DevOps-Mgmt_resources.yaml", 
+        "filename": "DevOps-Mgmt_resources.yaml", 
+        "id": "625149003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625149003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "827", 
+        "updated_at": "2017/03/07 12:55:26 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:26 +0000", 
+        "digest": "f5aebb41243429ef62f9e82321359109", 
+        "download_url": "https://island1.rightscale.com/attachments/1/f5aebb41243429ef62f9e82321359109?md5=f5aebb41243429ef62f9e82321359109&expiration=1514442854&signature=N%2FZ16nvhYW85sGfoyonABYpzVmCMlCN%2FK7e1rhihox5sVspnkMOZIdNxz1d9%0A4zci94%2FcDgBBFUgR7030vbEvCEbbpvRuAUkePrNah%2BPcOPhr1xW2LIASrMQs%0AYVbAxQf240ppNjxI8ltiaFKn1athvpjLU4HaeinIVE7uI47m7CE%3D%0A&signer=us-3&filename=admin.aclpolicy", 
+        "filename": "admin.aclpolicy", 
+        "id": "625150003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625150003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "738", 
+        "updated_at": "2017/03/07 12:55:26 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:26 +0000", 
+        "digest": "d91b43980ebac183bd42788425639a10", 
+        "download_url": "https://island1.rightscale.com/attachments/1/d91b43980ebac183bd42788425639a10?md5=d91b43980ebac183bd42788425639a10&expiration=1514442854&signature=JUuPmU%2FeUn%2FtJTx5m9qJORsRsAwjSaFS5BePNfTrsa5sQx3oahlYM7Vk3954%0Aa%2BL3vS2tIpxLoqoKMPG2UPuXJzBNyy9qm7Od%2Fpwfcbo2m4WuATZ%2F3RXT%2B8LU%0AyRbMKESV28rtlLtirvvVPMpeMKK%2BOwTcWJSWyMPbLEr1pb%2FB6es%3D%0A&signer=us-3&filename=execution.aclpolicy", 
+        "filename": "execution.aclpolicy", 
+        "id": "625151003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625151003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "1191", 
+        "updated_at": "2017/03/07 12:55:26 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:26 +0000", 
+        "digest": "9aae6040c48a9342d50d796a771ea11a", 
+        "download_url": "https://island1.rightscale.com/attachments/1/9aae6040c48a9342d50d796a771ea11a?md5=9aae6040c48a9342d50d796a771ea11a&expiration=1514442854&signature=Le0dFpDm9KcfFC1piNVHny%2BewZdv1XLmmvveUi3JHfVzoubKNHpTZihu1kxr%0ArnkPjM4vlZOwztqALaeNKuGKCHgnZrbpprVAwtIkK%2Bu2Kzg7tr91iFT01W01%0Az636VtiT5SLYmep0lIaGSTJ3iQD3ZwawBsWF0iSh24BO%2FVs1jlk%3D%0A&signer=us-3&filename=realm.properties", 
+        "filename": "realm.properties", 
+        "id": "625152003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625152003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "1918", 
+        "updated_at": "2017/03/07 12:55:26 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 12:55:26 +0000", 
+        "digest": "8b8144ca37271060d94d26f37095c998", 
+        "download_url": "https://island1.rightscale.com/attachments/1/8b8144ca37271060d94d26f37095c998?md5=8b8144ca37271060d94d26f37095c998&expiration=1514442854&signature=YAH1x8W4HmADt9srRXxgGtrns4nZHsSyqgQhY%2BiS%2Fvn8dy0bERAkani3mWQm%0ANFI8kRl%2F6ZjLjeve%2BHURdavh9Z%2BZGNx6f4hXq4WT4VRmuBk239CYSqtqiBJE%0A0NC0XRDfWxNzCGOqEpLA2pdk4u7lqgpAGUbV8DJggS3%2BbRg3jFo%3D%0A&signer=us-3&filename=rundeck-config.groovy", 
+        "filename": "rundeck-config.groovy", 
+        "id": "625153003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625153003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "1391", 
+        "updated_at": "2017/03/07 12:55:26 +0000"
+    }, 
+    {
+        "created_at": "2017/03/07 13:23:38 +0000", 
+        "digest": "48b35bfed6b2cdae625d34e1723b42f1", 
+        "download_url": "https://island1.rightscale.com/attachments/1/48b35bfed6b2cdae625d34e1723b42f1?md5=48b35bfed6b2cdae625d34e1723b42f1&expiration=1514442854&signature=Qh00CN12%2FDTFU6DNVXMGg0BlVhh3%2FsAtte3SwDOkJPaW4PyIKn0ytd6lpIFR%0AV%2Fo4tI2Sy7LQXbbf7hX%2F9BBaLqlGlSf2eJBzev55kcuogC1uA9PnBl9MgR0c%0AtMJF2APJBgS%2BHek%2BWbqAlBYflGqxiRZrm5NT7txuI13hFkQZlUE%3D%0A&signer=us-3&filename=bash_profile", 
+        "filename": "bash_profile", 
+        "id": "625154003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/584187003/attachments/625154003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/584187003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "274", 
+        "updated_at": "2017/03/07 13:23:38 +0000"
+    }
+]
