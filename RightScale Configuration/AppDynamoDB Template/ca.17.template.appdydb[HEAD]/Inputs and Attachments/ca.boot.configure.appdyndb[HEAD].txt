@@ -1,0 +1,114 @@
+INPUTS JSON 
+=================== 
+[
+    {
+        "advanced": false, 
+        "category_name": "Uncategorized", 
+        "default_value": "cred:prod17.config.appdyndb.linux.user", 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_DPL_APDYN_PWD", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "Uncategorized", 
+        "default_value": "text:appdyndb17.oregon.devops.commonapp.net", 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_DPL_APDYN_DNS", 
+        "possible_values": [], 
+        "required": true
+    }, 
+    {
+        "advanced": false, 
+        "category_name": "Uncategorized", 
+        "default_value": "text:appdyndb17", 
+        "description": "", 
+        "kind": "string", 
+        "name": "CA_DPL_APDYN_HOST", 
+        "possible_values": [], 
+        "required": true
+    }
+]
+INPUTS ATTACHMENTS 
+=================== 
+[
+    {
+        "created_at": "2016/06/15 20:44:11 +0000", 
+        "digest": "a228c38037c13064faf1c080c430dc18", 
+        "download_url": "https://island1.rightscale.com/attachments/1/a228c38037c13064faf1c080c430dc18?md5=a228c38037c13064faf1c080c430dc18&expiration=1514443543&signature=bEU2oNnItK1%2FPPHJFlCRHFYZQlcZoIHS3sx8bFdTzZlWS%2BXe95FJ1snutQrw%0AhA%2Fyckyl5FTDL8RhVCHMfZHqi3VTG0eTJ0f2CMAwoYophmH0fBrJpQvZZhhA%0AlW1%2FzfP5t3wmvUuYOwHTYqytIBBlVAdWQdlqz%2F9gqehY7AQ5xK8%3D%0A&signer=us-3&filename=vimrc", 
+        "filename": "vimrc", 
+        "id": "604179003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/564621003/attachments/604179003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/564621003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "52", 
+        "updated_at": "2016/06/15 20:44:11 +0000"
+    }, 
+    {
+        "created_at": "2016/06/15 20:44:11 +0000", 
+        "digest": "62c8300daba6dc29a1ea522165af29cb", 
+        "download_url": "https://island1.rightscale.com/attachments/1/62c8300daba6dc29a1ea522165af29cb?md5=62c8300daba6dc29a1ea522165af29cb&expiration=1514443543&signature=RN%2BqynTgzRLjfT%2B00Hv61YY00oIifEgrNq0SSyXM%2F5BZTEBIilH2RcqEkdSy%0A2iH32GtJKTbIil0eeWUn%2FSy7NEt3fVX8e1G%2FoYEq0lxb3jhUlbShwS891bl5%0AZqSiSQkxN4r0SUmQuAEOOZ88M3gHOSfCZj%2B9wvhW3SvNViEkjvw%3D%0A&signer=us-3&filename=bashrc", 
+        "filename": "bashrc", 
+        "id": "604180003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/564621003/attachments/604180003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/564621003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "405", 
+        "updated_at": "2016/06/15 20:50:43 +0000"
+    }, 
+    {
+        "created_at": "2017/04/19 15:09:34 +0000", 
+        "digest": "8d8cedbe7c808e4ffbb0232209a92991", 
+        "download_url": "https://island1.rightscale.com/attachments/1/8d8cedbe7c808e4ffbb0232209a92991?md5=8d8cedbe7c808e4ffbb0232209a92991&expiration=1514443543&signature=NsF8HIsoFbn8TKciHJklBZTn091KhrV2DPogmz5Ij77nvs8GWDqAdU1WS1SA%0AwzO7NE8NFtLXB8djylJfOtgEAKiCdayV19wVBmQntgkg5Ch9JUzme9ZJecrt%0AORjvEq8xno5U%2BjWUT6ETux2Rzlmhzf3vlAx%2BG6dXCTxfx8lI7Hc%3D%0A&signer=us-3&filename=dbtuna%2015%20table%20script.sql", 
+        "filename": "dbtuna 15 table script.sql", 
+        "id": "629700003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/564621003/attachments/629700003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/564621003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "20920", 
+        "updated_at": "2017/04/19 15:09:34 +0000"
+    }, 
+    {
+        "created_at": "2017/04/19 15:10:19 +0000", 
+        "digest": "249cdeca807366de8ebc514b6931bcfd", 
+        "download_url": "https://island1.rightscale.com/attachments/1/249cdeca807366de8ebc514b6931bcfd?md5=249cdeca807366de8ebc514b6931bcfd&expiration=1514443543&signature=livSfI2klZPunMj7xYEuPP9mlJFr2KlGfkU5kb2U320ZzZLg%2B%2BnCyET4k80q%0AT7j0eqNvKMEiRa9%2B9VtRm1gRBcgqY7xwZzpJx9skqe3brmmc3731I3PQAode%0Afr0SrlwLnHBpHtqbsO8SQye8SubvexUwUJwFyqMdbR%2FOQevuw4o%3D%0A&signer=us-3&filename=dbtuna16%20table%20script.sql", 
+        "filename": "dbtuna16 table script.sql", 
+        "id": "629701003", 
+        "links": [
+            {
+                "href": "/api/right_scripts/564621003/attachments/629701003", 
+                "rel": "self"
+            }, 
+            {
+                "href": "/api/right_scripts/564621003", 
+                "rel": "right_script"
+            }
+        ], 
+        "size": "21444", 
+        "updated_at": "2017/04/19 15:10:19 +0000"
+    }
+]

@@ -1,0 +1,24 @@
+INPUTS JSON 
+=================== 
+[
+    {
+        "advanced": true, 
+        "category_name": "RightScale", 
+        "default_value": "env:RS_TSS", 
+        "description": "The FQDN or IP address of the remote collectd server.", 
+        "kind": "string", 
+        "name": "COLLECTD_SERVER", 
+        "possible_values": [], 
+        "required": false
+    }, 
+    {
+        "advanced": true, 
+        "category_name": "RightScale", 
+        "default_value": "env:RS_INSTANCE_UUID", 
+        "description": "Universally-unique identifier for this server incarnation. Unique across all clouds, partitions, and guaranteed to change after a bundled boot or stop/start operation. Can be used as a sketchy or lumberjack hostname identifier.", 
+        "kind": "string", 
+        "name": "RS_INSTANCE_UUID", 
+        "possible_values": [], 
+        "required": false
+    }
+]
