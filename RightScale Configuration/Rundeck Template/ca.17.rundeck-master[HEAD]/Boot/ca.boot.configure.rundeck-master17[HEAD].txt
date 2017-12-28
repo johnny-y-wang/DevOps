@@ -1,0 +1,264 @@
+#!/bin/bash
+
+#
+# Test for a reboot, if this is a reboot just skip this script.
+#
+
+
+if test "$RS_REBOOT" = "true" -o -d /etc/rundeck
+then
+  echo "Rundeck Master installed, skipped on a reboot."
+  logger -t RightScale "Rundeck Master installed, skipped on a reboot."
+  exit 0
+fi
+
+myDNSname=$CA_DPL_RUNDECK_DNS
+myHOSTname=$CA_DPL_RUNDECK_HOST
+myDBSschema=$CA_DPL_RUNDECK_DBS
+myATTACH_DIR=$RS_ATTACH_DIR
+myRDSrundeckreader=$CA_DPL_RUNDECKREADER_PWD
+myRUNNERsshkey=$CA_DPL_RUNNER_SSH_KEY
+myGITHUBsshkey=$CA_DPL_GITHUB_SSH_KEY
+myDisableExecution=$CA_DPL_DISABLE_EXECUTION
+myCreateProjJob=$CA_DPL_CREATE_PROJ_JOB
+myStartService=$CA_DPL_START_SERVICE
+myUseMySqlDb=$CA_DPL_USEMYSQL
+
+#make rundeck sudoer
+sudo sh -c 'echo -e "rundeck ALL=(ALL)NOPASSWD: ALL\nDefaults:rundeck !requiretty\n" >> /etc/sudoers'
+
+##### here, as user rundeck, the RS_ATTACH_DIR is not accessable, copy all to /tmp and work from there
+#copy all attachment to /tmp first
+cd /tmp
+cp $myATTACH_DIR/* .
+sudo chmod 666 /tmp/*
+myATTACH_DIR="/tmp"
+
+#install Rundeck latest package
+sudo rpm -Uvh http://repo.rundeck.org/latest.rpm
+sudo yum -y install rundeck
+
+#install rd and most current java JDK/JRE for rd command 
+cd /tmp
+wget https://bintray.com/rundeck/rundeck-rpm/rpm -O bintray.repo
+sudo mv bintray.repo /etc/yum.repos.d/
+sudo yum -y install rundeck-cli
+sudo yum -y remove java-1.7.0-openjdk
+sudo yum -y install java-1.8.0
+
+sudo -u rundeck mkdir /var/lib/rundeck/.rd
+sudo -u rundeck cp $myATTACH_DIR/rd.conf /var/lib/rundeck/.rd
+
+sudo yum install python-pip -y
+sudo /usr/bin/pip install boto3
+sudo pip install boto3 --upgrade
+sudo /usr/bin/pip install tabulate
+sudo /usr/bin/pip install PyMySQL
+sudo pip install pywinrm
+sudo /usr/bin/pip install prettytable==0.7.2
+sudo yum-config-manager --enable epel
+sudo yum -y install colordiff
+sudo yum install gcc-c++
+sudo /usr/bin/pip install oauth2client
+sudo /usr/bin/pip install gspread
+sudo /usr/bin/pip install pandas
+sudo /usr/bin/pip install pycountry
+
+#user "rundeck" home is /var/lib/rundeck
+sudo -u rundeck mkdir /var/lib/rundeck/.aws
+sudo -u rundeck sh -c "echo -e '[default]\noutput = json\nregion = us-west-2\n' > /var/lib/rundeck/.aws/credentials"
+
+
+sudo chmod -R 600 /var/lib/rundeck/.aws/credentials
+
+if test ! -d /etc/rundeck
+then
+  echo "Rundeck YUM installation failed"
+  logger -t RightScale "Rundeck YUM installation failed"
+  exit 1
+fi
+
+sudo cp $myATTACH_DIR/bashrc /root/.bashrc
+sudo cp $myATTACH_DIR/vimrc /root/.vimrc
+sudo cp $myATTACH_DIR/bash_profile /root/.bash_profile
+
+sudo -u ec2-user cp $myATTACH_DIR/bashrc /home/ec2-user/.bashrc
+sudo -u ec2-user cp $myATTACH_DIR/vimrc /home/ec2-user/.vimrc
+sudo -u ec2-user cp $myATTACH_DIR/bash_profile /home/ec2-user/.bash_profile
+
+sudo -u rundeck cp $myATTACH_DIR/bashrc /var/lib/rundeck/.bashrc
+sudo -u rundeck cp $myATTACH_DIR/vimrc /var/lib/rundeck/.vimrc
+sudo -u rundeck cp $myATTACH_DIR/bash_profile /var/lib/.bash_profile
+
+
+if test ! -d /usr/local/bin
+then
+  sudo mkdir /usr/local/bin
+fi
+sudo chgrp rundeck /usr/local/bin
+sudo chmod 775 /usr/local/bin
+
+#sudo cp $myATTACH_DIR/SWF_SDS_Reporting.py /usr/local/bin
+sudo -u rundeck cp $myATTACH_DIR/*.sh /usr/local/bin
+sudo chmod 770 /usr/local/bin/*
+
+
+sudo mkdir /usr/local/bin2
+sudo chmod 775 /usr/local/bin2
+sudo chgrp rundeck /usr/local/bin2
+
+cd /etc/rundeck
+sudo mkdir configBK
+for file in framework.properties realm.properties *mapping.* profile rundeck-config.groovy admin.aclpolicy execution.aclpolicy readonly.aclpolicy privilege.aclpolicy rundeck-config.properties
+do
+  if [ -z $file ]
+  then
+    sudo mv $file configBk
+  fi
+  #use File instead of mysql DB
+  if [ $file = rundeck-config.groovy -a $myUseMySqlDb != 'Y' ]
+  then
+    sudo -u rundeck cp $myATTACH_DIR/$file.file $file
+  else
+    sudo -u rundeck cp $myATTACH_DIR/$file .
+  fi
+  sudo chmod 640 $file
+done
+
+#install RDS rundeckreader password
+sudo -u rundeck sh -c "echo '$myRDSrundeckreader' > /etc/rundeck/RDSrundeckreader17"
+sudo chmod 600 /etc/rundeck/RDSrundeckreader17
+
+
+### install SSH key to runner
+#sudo mkdir -p "/var/lib/rundeck/var/storage/content/keys/Prod15"
+#sudo chown -R rundeck /var/lib/rundeck/var/*
+#sudo chgrp -R rundeck /var/lib/rundeck/var/*
+#sudo chmod 640 /var/lib/rundeck/var/storage/content/keys/Prod15/prod.15.linux
+#sudo sh -c "echo \"$myRUNNERsshkey\" > /var/lib/rundeck/var/storage/content/keys/Prod15/Runner.pem"
+#sudo chmod 640 /var/lib/rundeck/var/storage/content/keys/Runner.pem
+sudo -u rundeck mkdir -p                         "/var/lib/rundeck/var/storage/content/keys/Prod"
+sudo -u rundeck sh -c "echo \"$myRUNNERsshkey\" > /var/lib/rundeck/var/storage/content/keys/Prod/Runner.pem"
+sudo chmod 640 /var/lib/rundeck/var/storage/content/keys/Prod/Runner.pem
+
+#here, import scripts by fetching from git repo.
+sudo yum -y install git
+sudo sh -c "echo '$myGITHUBsshkey' >> /root/.ssh/id_rsa"
+sudo sh -c "echo -e 'Host github.com\n\tStrictHostKeyChecking no\n\tHostname ssh.github.com\n\tPort 443\n' >> /root/.ssh/config"
+sudo chmod 600 /root/.ssh/id_rsa
+sudo chmod 600 /root/.ssh/config
+
+cd /usr/local/bin
+sudo git clone git@github.com:CommonApp/DevOps.git DevOps
+sudo git clone git@github.com:CommonApp/Configs.git Configs
+sudo git clone git@github.com:CommonApp/CAST.git TCC
+sudo git clone git@github.com:CommonApp/CACloud.git CACloud
+
+#here to be able to bring all scripts to /usr/local/bin, to be run first thing
+sudo cp /usr/local/bin/DevOps/Utility/Productionalized/Rundeck/BringScriptToDate.sh /usr/local/bin
+
+#create fold for realm orig.
+sudo -u rundeck mkdir /etc/rundeck/realmbk
+sudo chmod 770 /etc/rundeck/realmbk
+
+#replace DNSname
+sudo sed -i "s/rundeck-master.west.devops.commonapp.net/$myDNSname/" /etc/rundeck/framework.properties
+sudo sed -i "s/rundeck-master.west.devops.commonapp.net/$myDNSname/" /etc/rundeck/rundeck-config.properties
+sudo sed -i "s/rundeck-master.west.devops.commonapp.net/$myDNSname/" /etc/rundeck/rundeck-config.groovy
+myIP=$(ifconfig eth0 |grep  'inet addr:' | cut -d ':' -f2|cut -d' ' -f1)
+if test x$myIP != x && grep $myDNSname /etc/hosts > /dev/null 2>&1
+then
+    :
+else
+    sudo echo "$myIP  $myDNSname >> /etc/hosts"
+    sudo sh -c "echo $myIP  $myDNSname >> /etc/hosts"
+fi
+
+#add mysql client
+sudo yum install mysql -y
+
+#replace DBS schema name
+sudo sed -i "s/RUNDECKDBS/$myDBSschema/g" /etc/rundeck/rundeck-config.groovy
+
+#replace/add HOSTname
+sudo sed -i "s/Rundeck-Master/$myHOSTname/" /root/.bashrc
+sudo sed -i "s/Rundeck-Master/$myHOSTname/" /home/ec2-user/.bashrc
+sudo sed -i "s/HOSTNAME=localhost.localdomain/HOSTNAME=$myHOSTname/" /etc/sysconfig/network
+
+#install hipchat, ec2 nodes plugin
+sudo -u rundeck cp $myATTACH_DIR/*.jar /var/lib/rundeck/libext
+#sudo chown rundeck /var/lib/rundeck/libext/*
+#sudo chgrp rundeck /var/lib/rundeck/libext/*
+
+sudo hostname $myHOSTname
+#here, the service function rundeckd doesn't work, replaced with a working /etc/init.d/rundeckd
+if [ -s $myATTACH_DIR/rundeckd ]
+then
+  sudo mv /etc/init.d/rundeckd /etc/init.d/rundeckd.orig
+  sudo cp $myATTACH_DIR/rundeckd /etc/init.d/rundeckd
+  sudo chmod 755 /etc/init.d/rundeckd
+fi
+
+for proj in "DevOps-Mgmt" "Testing"
+do
+
+    if [ $myDisableExecution = 'Y' ]
+    then
+      #sed -i "s/<group/<executionEnabled>false<\/executionEnabled>\n\t<group/g" /tmp/"$proj"Proj.xml
+      sed -i "s/<executionEnabled>true</<executionEnabled>false</g" /tmp/"$proj"Proj.xml
+    fi
+    
+    if [ ! -d /var/rundeck/projects/$proj ]
+    then
+      sudo -u rundeck mkdir -p /var/rundeck/projects/$proj
+      sudo -u rundeck mkdir -p /var/rundeck/projects/$proj/etc
+    fi
+    
+    #install Project specific Resources (for LDAP nodes, etc.)
+    for file in project.properties resources.xml resources.yaml
+    do
+      if [ -s $myATTACH_DIR/${proj}_${file} ]
+      then
+        sudo -u rundeck cp -p $myATTACH_DIR/${proj}_$file /var/rundeck/projects/$proj/etc/$file
+        sudo sed -i "s/.west./.oregon./g" /var/rundeck/projects/"${proj}"/etc/$file
+        if [ ${file} = project.properties ]
+        then
+          sudo sed -i "s/rundeck-master.oregon.devops.commonapp.net/$myDNSname/g" /var/rundeck/projects/"${proj}"/etc/$file
+        fi
+      fi
+    done
+done
+
+if [ $myStartService = 'Y' ]
+then
+  echo "Sleep 1 minute for the service to start ......."
+  #need to set JAVA_HOME="/usr/lib/jvm/jre-1.8.0"
+  if [ x$JAVA_HOME = x ]
+  then
+     JAVA_HOME="/usr/lib/jvm/jre-1.8.0"
+  fi
+  echo "JAVA_HOME=$JAVA_HOME"
+  sudo service rundeckd start
+  sleep 60
+fi
+
+for proj in "DevOps-Mgmt" "Testing"
+do
+    if [ $myCreateProjJob = 'Y' ]
+    then
+     
+      #discontinued rd-xxxx command, replaced by rd 
+      #sudo /usr/bin/rd-project -a create -p "$proj"
+      #sudo /usr/bin/rd-jobs load -p "$proj" --file /tmp/"$proj"Proj.xml
+      
+      #need to set JAVA_HOME="/usr/lib/jvm/jre-1.8.0"
+      if [ x$JAVA_HOME = x ]
+      then
+         JAVA_HOME="/usr/lib/jvm/jre-1.8.0"
+      fi
+      echo "JAVA_HOME=$JAVA_HOME"
+      sudo -u rundeck /usr/bin/rd projects create -p "$proj"
+      sleep 10
+      sudo -u rundeck /usr/bin/rd jobs load -p "$proj" -f /tmp/"$proj"Proj.xml
+    fi
+done

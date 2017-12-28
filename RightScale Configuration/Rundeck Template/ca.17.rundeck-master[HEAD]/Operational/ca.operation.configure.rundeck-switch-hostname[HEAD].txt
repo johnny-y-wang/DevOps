@@ -1,0 +1,43 @@
+#!/bin/bash
+
+#
+# script to switch Rundeck Master Hostname
+#
+
+
+if [ ! -d /etc/rundeck ]
+then
+  echo "Rundeck Master not stalled, Exit."
+  logger -t RightScale "Rundeck Master not installed, action aborted."
+  exit 1
+fi
+
+myHostName=$CA_DPL_RUNDECK_NEWHOST
+myOldHostName=$CA_DPL_RUNDECK_OLDHOST
+
+#replace DNSname
+cd /etc/rundeck
+sudo sed -i "s/$myOldHostName\./$myHostName\./i" /etc/rundeck/framework.properties
+sudo sed -i "s/$myOldHostName\./$myHostName\./i" /etc/rundeck/rundeck-config.properties
+sudo sed -i "s/$myOldHostName\./$myHostName\./i" /etc/rundeck/rundeck-config.groovy
+
+echo "sudo sed -i 's/$myOldHostName\./$myHostName\./i' /etc/rundeck/framework.properties"
+echo "sudo sed -i 's/$myOldHostName\./$myHostName\./i' /etc/rundeck/rundeck-config.properties"
+echo "sudo sed -i 's/$myOldHostName\./$myHostName\./i' /etc/rundeck/rundeck-config.groovy"
+
+
+#replace/add HOSTname
+sudo sed -i "s/$myOldHostName\./$myHostName\./i" /etc/hosts
+sudo sed -i "s/HOSTNAME=$myOldHostName$/HOSTNAME=$myHostName/i" /etc/sysconfig/network
+sudo sed -i "s/$myOldHostName$/$myHostName/i" /root/.bashrc
+sudo sed -i "s/$myOldHostName$/$myHostName/i" /home/ec2-user/.bashrc
+
+echo 'sudo sed -i "s/$myOldHostName$/$myHostName/i" /etc/hosts'
+echo 'sudo sed -i "s/HOSTNAME=$myOldHostName$/HOSTNAME=$myHostName/i" /etc/sysconfig/network'
+echo 'sudo sed -i "s/$myOldHostName$/$myHostName/i" /root/.bashrc'
+echo 'sudo sed -i "s/$myOldHostName$/$myHostName/i" /home/ec2-user/.bashrc'
+
+
+sudo hostname $myHostName
+
+#sudo service rundeckd restart
