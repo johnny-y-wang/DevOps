@@ -58,4 +58,4 @@ Resources:
   TestAPIBucket:
     Type: AWS::S3::Bucket
     Properties:
-        BucketName: !Sub smaprod.${ecrImageARN}min${minCapacity}max${maxCapacity}desired${desiredCapacity}cpu${taskCPU}.api 
+        BucketName: !Sub smaprod.min${minCapacity}max${maxCapacity}desired${desiredCapacity}cpu${taskCPU}.api 
