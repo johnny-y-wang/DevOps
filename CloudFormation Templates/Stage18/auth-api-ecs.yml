@@ -49,7 +49,8 @@ Parameters:
 
   taskMemory:
     Description: Task Memory Allocation
-    Type: String   
+    Type: String
+      
   scalingTargetValue:
     Description: Target Value for Autoscaling
     Type: Number
