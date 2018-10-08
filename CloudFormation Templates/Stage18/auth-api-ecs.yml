@@ -56,4 +56,4 @@ Resources:
   TestAnotherAPIBucket:
     Type: AWS::S3::Bucket
     Properties:
-        BucketName: !Sub another.!GetAtt [TestAPIBucket, Name]
+        BucketName: !Join [ " - ", [ another, !GetAtt [TestAPIBucket, Name]] ]
