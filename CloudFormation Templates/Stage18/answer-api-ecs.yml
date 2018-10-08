@@ -1,20 +1,3 @@
-Skip to content
- 
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- @smahmad Sign out
-1
-0 0 smahmad/DevOps
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights  Settings
-DevOps/CloudFormation Templates/Stage18/auth-api-ecs.yml
-58ead96  an hour ago
-@smahmad smahmad Update auth-api-ecs.yml
-     
-56 lines (54 sloc)  1.28 KB
 Parameters:
   envPrefixCommon:
     Type: String
@@ -70,16 +53,3 @@ Resources:
     Type: AWS::S3::Bucket
     Properties:
         BucketName: !Sub smastage.min${scalingTargetValue}max${maxCapacity}desired${desiredCapacity}cpu${ecrImageARN}.api 
-© 2018 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Press h to open a hovercard with more details.
