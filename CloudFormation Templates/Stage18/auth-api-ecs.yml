@@ -52,4 +52,4 @@ Resources:
   TestAPIBucket:
     Type: AWS::S3::Bucket
     Properties:
-        BucketName: !Sub smastage.min${scalingTargetValue}max${maxCapacity}desired${desiredCapacity}cpu${taskCPU}.api 
+        BucketName: !Sub smastage.min${scalingTargetValue}max${maxCapacity}desired${desiredCapacity}cpu${taskCPU}.api
