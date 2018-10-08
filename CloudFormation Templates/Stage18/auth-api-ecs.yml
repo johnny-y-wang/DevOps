@@ -56,4 +56,4 @@ Resources:
   TestAnotherAPIBucket:
     Type: AWS::S3::Bucket
     Properties:
-        BucketName: !Join [ ".", [ another, !Sub smastage.min${scalingTargetValue}.api, Arn] ]
+        BucketName: !Join [ ".", [ another, arn:aws:s3:::smastage.min69.api] ]
