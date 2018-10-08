@@ -1,0 +1,85 @@
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ @smahmad Sign out
+1
+0 0 smahmad/DevOps
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights  Settings
+DevOps/CloudFormation Templates/Stage18/auth-api-ecs.yml
+58ead96  an hour ago
+@smahmad smahmad Update auth-api-ecs.yml
+     
+56 lines (54 sloc)  1.28 KB
+Parameters:
+  envPrefixCommon:
+    Type: String
+    Default: 'prod'
+    AllowedValues:
+      - alpha
+      - delta
+      - stage
+      - prod
+      - loadtest
+      - sandbox
+    Description: Common prefix for the Environment you want to create
+    Type: String
+    Default: 'commonapp.net'
+    AllowedValues:
+      - devca.net
+      - commonapp.net
+      - commonapp.org
+    Description: Top Level Domain for Environment
+  envYear:
+    Type: String
+    Default: '18'
+    AllowedValues:
+      - 17
+      - 18
+      - 19
+      - 20
+    Description: '2 Digit year of the environment'
+  ecrImageARN:
+    Description: ARN for Container Registry Image ARN
+    Type: String
+  minCapacity:
+    Description: Minimum Number of Tasks
+    Type: Number
+  maxCapacity: 
+    Description: Maxiumum Number of Tasks
+    Type: Number
+  desiredCapacity:
+    Description: Desired Number of Tasks
+    Type: Number
+  taskCPU:
+    Description: Task CPU Allocation
+    Type: String
+  taskMemory:
+    Description: Task Memory Allocation
+    Type: String
+  scalingTargetValue:
+    Description: Target Value for Autoscaling
+    Type: Number
+   
+Resources:
+  TestAPIBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+        BucketName: !Sub smastage.min${scalingTargetValue}max${maxCapacity}desired${desiredCapacity}cpu${ecrImageARN}.api 
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Press h to open a hovercard with more details.
