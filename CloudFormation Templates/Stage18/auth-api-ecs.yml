@@ -55,4 +55,4 @@ Resources:
   TestAnotherAPIBucket:
     Type: AWS::S3::Bucket
     Properties:
-        !Select [2, !Split [":", !GetAtt [TestAPIBucket,Arn]]]
+        !Select [2, !Split [".", !GetAtt [TestAPIBucket,Arn]]]
