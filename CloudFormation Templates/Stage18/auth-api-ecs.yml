@@ -53,7 +53,7 @@ Resources:
     Properties:
       GroupName: seuritygroupapitesting
       GroupDescription: seurity group to test api template
-      VpcId: vpc-ad5d1bd5
+      VpcId: vpc-056fa511ca68d660e
       Tags:
       - Key: Name
         Value: seuritygroupapitesting
