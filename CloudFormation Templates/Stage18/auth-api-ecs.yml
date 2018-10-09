@@ -55,4 +55,4 @@ Parameters:
   TestAnotherAPIBucket:
     Type: AWS::S3::Bucket
     Properties:
-        BucketName: !Select [2, !Split [":", !GetAtt [TestAPISecurityGroup,Arn]]
+        BucketName: !Select [2, !Split [":", !GetAtt [TestAPISecurityGroup,Arn]]]
