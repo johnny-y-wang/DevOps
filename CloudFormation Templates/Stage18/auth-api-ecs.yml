@@ -65,4 +65,4 @@ Resources:
   TestAnotherAPIBucket:
     Type: AWS::S3::Bucket
     Properties:
-        BucketName: !Join [ ".", [ another, !GetAtt [TestAPISecurityGroup, GroupId]] ]
+        BucketName: !Join [ ".", [ another, !GetAtt TestAPISecurityGroup.GroupId] ]
