@@ -52,12 +52,12 @@ Resources:
   TestAPISecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      GroupName: seuritygroupapi
+      GroupName: seuritygroupapitesting
       GroupDescription: seurity group to test api template
-      VpcId: vpc-056fa511ca68d660e
+      VpcId: vpc-ad5d1bd5
       Tags:
       - Key: Name
-        Value: seuritygroupapi
+        Value: seuritygroupapitesting
   TestAPIBucket:
     Type: AWS::S3::Bucket
     Properties:
