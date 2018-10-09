@@ -47,7 +47,7 @@ Parameters:
   scalingTargetValue:
     Description: Target Value for Autoscaling
     Type: Number
-   
+Resources:   
   TestAPIBucket:
     Type: AWS::S3::Bucket
     Properties:
