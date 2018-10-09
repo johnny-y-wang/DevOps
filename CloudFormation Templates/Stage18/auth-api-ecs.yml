@@ -55,4 +55,4 @@ Resources:
   TestAnotherAPIBucket:
     Type: AWS::S3::Bucket
     Properties:
-        BucketName: !Sub TestAnother {!Select [2, !Split [".", !GetAtt [TestAPIBucket,Arn]]]}
+        BucketName: !Join [ ".", [ another, !Select [2, !Split [":", !GetAtt [TestAPISecurityGroup,Arn]]]]]
