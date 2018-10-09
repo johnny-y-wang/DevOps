@@ -48,15 +48,6 @@ Parameters:
     Description: Target Value for Autoscaling
     Type: Number
 Resources:
-  TestAPISecurityGroup:
-    Type: AWS::EC2::SecurityGroup
-    Properties:
-      GroupName: seuritygroupapitesting
-      GroupDescription: seurity group to test api template
-      VpcId: vpc-056fa511ca68d660e
-      Tags:
-      - Key: Name
-        Value: seuritygroupapitesting
   TestAPIBucket:
     Type: AWS::S3::Bucket
     Properties:
