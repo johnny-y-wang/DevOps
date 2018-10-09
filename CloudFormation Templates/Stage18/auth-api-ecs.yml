@@ -52,7 +52,3 @@ Parameters:
     Type: AWS::S3::Bucket
     Properties:
         BucketName: !Sub smastage.min${scalingTargetValue}.api
-  TestAnotherAPIBucket:
-    Type: AWS::S3::Bucket
-    Properties:
-        BucketName: !Select [2, !Split [":", !GetAtt [TestAPISecurityGroup,Arn]]]
