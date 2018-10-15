@@ -1,7 +1,8 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
 Parameters:
-  envPrefixCommon:
+  envPrefix:
     Type: String
-    Default: 'prod'
     AllowedValues:
       - alpha
       - delta
@@ -9,25 +10,99 @@ Parameters:
       - prod
       - loadtest
       - sandbox
-    Description: Common prefix for the Environment you want to create
-    Type: String
-    Default: 'commonapp.net'
-    AllowedValues:
-      - devca.net
-      - commonapp.net
-      - commonapp.org
-    Description: Top Level Domain for Environment
+    Description: Prefix for the Environment you want to create
   envYear:
     Type: String
-    Default: '18'
     AllowedValues:
-      - 17
       - 18
       - 19
       - 20
-    Description: '2 Digit year of the environment'
+    Description: 2 digit year for season specific assets
+  serviceSGs:
+    Description: Security groups for ECS service
+    Type: List<AWS::EC2::SecurityGroup::Id>
+  privateSubnets:
+    Description: Subnets for ECS service
+    Type: List<AWS::EC2::Subnet::Id>  
+  vpcId:
+    Description: VPC Id
+    Type: AWS::EC2::VPC::Id
+  taskExecutionRoleARN:
+    Description: ARN for Task Execution Role
+    Type: String
   ecrImageARN:
     Description: ARN for Container Registry Image ARN
+    Type: String
+  apiALBDNS:
+    Description: ARN for Container Registry Image ARN
+    Type: String
+  apiDomain:
+    Description: Base URL for API in Stage
+    Type: String
+  appBaseURL:
+    Description: Base URL for App
+    Type: String
+  albListenerARN:
+    Description: ALB listener ARN
+    Type: String
+  email20DynamoTable:
+    Description: ARN for emial table
+    Type: String
+  kmsKey:
+    Description: KMS Key ARN to encrypt environment variables
+    Type: String
+  applicantCognitoPoolARN:
+    Description: ARN for Applicant Cognito user pool
+    Type: String
+  partnerCognitoPoolARN:
+    Description: ARN for Partner Cognito user pool
+    Type: String
+  alarmSNSTopic1:
+    Description: SNS topic used in alarm actions
+    Type: String
+  alarmSNSTopic2:
+    Description: SNS topic used in alarm actions
+    Type: String
+  clusterName:
+    Description: Fargate Cluster Name
+    Type: String
+  helpURL:
+    Description: Applicant help URL
+    Type: String
+  cdnURL:
+    Description: CDN URL
+    Type: String
+  copyrightYear:
+    Description: Copyright year
+    Type: Number
+  forgotPasswordEmailNotFoundTemplateName:
+    Description: Frogot password SES template name
+    Type: String
+  forgotPasswordEmailNotFoundTemplateVersion:
+    Description: Frogot password SES template version
+    Type: String
+  #senderEmailId:
+    #Default: Common App<appsupport@commonapp.net>
+    #Description: Sender email id
+    #Type: String
+  secrets:
+    NoEcho: true
+    Description: Secret parameter for auth API
+    Type: String
+  getApplicantDetailsApiResourceName: 
+    Description: Get applicant resource
+    Type: String
+  season: 
+    Description: Common application season
+    Type: String
+  apiResourceName:
+    Description: API resource name
+    Type: String
+  dynamoDBTablePreFix:
+    Description: DynamoDB table prefix
+    Type: String
+  autoscalingRoleARN:
+    Description: Autoscaling Role ARN
     Type: String
   minCapacity:
     Description: Minimum Number of Tasks
@@ -38,15 +113,63 @@ Parameters:
   desiredCapacity:
     Description: Desired Number of Tasks
     Type: Number
+  scalingTargetValue:
+    Description: Target Value for Autoscaling
+    Type: Number
+  scaleInCooldown:
+    Description: Cooldown Time After Scale-In
+    Type: Number
+  scaleOutCooldown:
+    Description: Cooldown Time After Scale-Out
+    Type: Number
   taskCPU:
     Description: Task CPU Allocation
     Type: String
   taskMemory:
     Description: Task Memory Allocation
     Type: String
-  scalingTargetValue:
-    Description: Target Value for Autoscaling
+  containerPort:
+    Description: Container Port
     Type: Number
+  healthCheckPath:
+    Description: Health Check Path
+    Type: String
+  healthCheckProtocol:
+    Description: Health Check Protocol
+    Type: String
+  healthCheckGracePeriod:
+    Description: Health Check Grace Period in Seconds
+    Type: String
+  logLevel:
+    Description: CloudWatch log level
+    Type: String
+  CPUWarningThreshold:
+    Description: CPU Warning Alarm Threshold
+    Type: Number
+  CPUCriticalThreshold:
+    Description: CPU Critical Alarm Threshold
+    Type: Number
+  MemoryWarningThreshold:
+    Description: Memory Warning Alarm Threshold
+    Type: Number
+  MemoryCriticalThreshold:
+    Description: Memory Critical Alarm Threshold
+    Type: Number
+  ResponseTimeThreshold:
+    Description: Response Time Alarm Threshold
+    Type: Number
+  UnhealthyHostsThreshold:
+    Description: Unhealthy hosts Alarm Threshold
+    Type: Number
+  BackendErrorsThreshold:
+    Description: Backend Errors Alarm Threshold
+    Type: Number
+  sumoLogicLambdaARN:
+    Description: SumoLogic Lambda ARN to collect logs
+    Type: String
+  ingestLogs:
+    Description: Boolean flag for SumoLogic log ingestion
+    Type: String
 Resources:
   TestAPIBucket:
     Type: AWS::S3::Bucket
